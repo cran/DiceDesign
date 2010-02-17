@@ -1,0 +1,5 @@
+useDynLib(DiceDesign) 
+
+export(coverage,discrepancyCriteria,
+	dmaxDesign,factDesign,meshRatio,mindist,
+	runif.faure,straussDesign, rss2d, rss3d, unif.test.quantile, unif.test.statistic)
