@@ -16,8 +16,8 @@ where \eqn{\gamma_{i}}{g_i} is the minimal distance between the point \eqn{x_{i}
 and the other points of the \code{design} and \eqn{\bar{\gamma}}{gMean} is
 the mean of the \eqn{\gamma_{i}}{g_i}. 
 
-Note that for a regular mesh, \code{cov}=0. Then, a small value of \code{cov} meansthat the design is close to a regular grid.}
-\value{A real number equal to the value of the coverage criterion for the design \code{design}.}
+Note that for a regular mesh, \code{cov}=0. Then, a small value of \code{cov} means that the design is close to a regular grid.}
+\value{A real number equal to the value of the coverage criterion for the \code{design}.}
 
 \references{Gunzburer M., Burkdart J. (2004) \emph{Uniformity measures for point
 samples in hypercubes}

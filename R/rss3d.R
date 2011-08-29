@@ -169,7 +169,7 @@ if (graphics > 0) {
 		}
 		if (max(abs(projections[i]*dir.max))<=1) plot3d(projections[i]*dir.max[1], projections[i]*dir.max[2], projections[i]*dir.max[3], pch=20, col="red", size=5, add=TRUE)
 	}
-	
+	par(mfrow=c(1,1))
 } # end of conditional block: "if graphics > 0"
 
 return(list(stat=anglewise.stat.max, angle=data.frame(theta=theta, phi=phi), global.stat=global.stat.array, print.out=print.out, gof.test.stat=gof.test.stat, worst.case=triplet.worst, worst.dir=dir.max))

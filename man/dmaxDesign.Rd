@@ -6,7 +6,7 @@
   [0,1]\eqn{^d}{^d}.
 }
 \usage{
-dmaxDesign(n, dimension, range, niter_max)
+dmaxDesign(n, dimension, range, niter_max=1000)
 }
 
 \arguments{
@@ -27,8 +27,7 @@ The spatial correlation matrix is defined by \eqn{C=\left( \rho_{ij}
 \right)}{C=(r[i,j])}:
 \tabular{ll}{
 	\eqn{\rho_{ij}=1-\gamma\left(h_{ij}\right)}{r[i,j]=1-gamma(h[i,j])} \tab if \eqn{h_{ij}\leq a}{h[i,j] <=a}, \cr
-	\eqn{\rho_{ij}=0}{r[i,j]=0} \tab if \eqn{h_{ij}>a}{if h_{ij}>a}, \cr
-	\eqn{\rho_{ii}=1}{r[i,i]=1} \tab otherwise,}
+	\eqn{\rho_{ij}=0}{r[i,j]=0} \tab if \eqn{h_{ij}>a}{if h_{ij}>a},}
 where \eqn{h_{ij}}{h[i,j]} is the distance between \eqn{x_{i}}{xi} and
 \eqn{x_{j}}{xj}, \eqn{a}{a} denotes the range of the variogram and
 \eqn{\gamma}{gamma} is a spherical variogram:
@@ -38,10 +37,11 @@ where \eqn{h_{ij}}{h[i,j]} is the distance between \eqn{x_{i}}{xi} and
 
 \value{A list with components:
   \item{n              	}{the number of points}
-  \item{design		}{the design of experiments}
+  \item{design			}{the design of experiments}
   \item{dimension      	}{the number of variables}
   \item{range          	}{the range of the variogram}
-  \item{design_init	}{the initial distribution}
+  \item{niter_mx		}{the number of iterations}
+  \item{design_init		}{the initial distribution}
   \item{det_init       	}{the value of the determinant for the initial distribution}
   \item{det_end        	}{the value of the determinant at the end of the procedure}
 }

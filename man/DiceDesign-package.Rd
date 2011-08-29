@@ -5,10 +5,10 @@
 \title{Designs of Computer Experiments}
 \description{Space-Filling Designs (SFD) and criteria of uniformity.}
 \details{\tabular{ll}{
-	Package: \tab DiceDesign\cr
+	Package: \tab DiceDesignGamma\cr
 	Type: \tab Package\cr
-	Version: \tab 1.0\cr
-	Date: \tab 2010-02-17\cr
+	Version: \tab 1.1\cr
+	Date: \tab 2011-08-29\cr
 	License: \tab GPL-3\cr
 	}
 This package provides tools to create some specific Space-Filling Design (SFD) and to test their quality:
@@ -22,7 +22,7 @@ This package provides tools to create some specific Space-Filling Design (SFD) a
 
 (maintainer: D. Dupuy \email{dupuy@emse.fr})}
 
-\note{This work was conducted within the frame of the DICE (Deep Inside Computer Experiments) Consortium between ARMINES, Renault, EDF, IRSN, ONERA and TOTAL S.A. (http://www.dice-consortium.fr/).
+\note{This work was conducted within the frame of the DICE (Deep Inside Computer Experiments) Consortium between ARMINES, Renault, EDF, IRSN, ONERA and TOTAL S.A. (http://emse.dice.fr/).
 
 In this package only Faure's sequence is implemented.
 Note that the \pkg{randtoolbox} package provides the following quasi

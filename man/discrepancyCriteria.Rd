@@ -22,15 +22,16 @@
 }
 
 \details{The discrepancy measures how far a given distribution of points deviates
-from a perfectly uniform one. The computed values represent the quantity 
-\deqn{\left\| \frac{A\left(J,X\right)}{n} - Vol \left( J \right) \right\|_{2}}{|| 
-A (J,X)/n - Vol(J))||_{L2}} where \eqn{A\left(J,X\right)}{A (J,X)} is the number 
-of points of the design \eqn{X} falling in a part \eqn{J} of the unit cube depending 
-on the type of discrepancy.
+from a perfectly uniform one. Different L2 discrepancies are available in DiceDesign.
+For example, if we denote by \eqn{Vol(J)} the volume of a subset \eqn{J} of \eqn{[0; 1]^d} and \eqn{A(X; J)} the number of points of \eqn{X} falling in \eqn{J}, the \eqn{L2}-star discrepancy is:
+\deqn{D_L2 (X) = \left[ \int_{[0,1]^{2d}}{} \left( \frac{A(X,J_{a,b})}{n} - Vol (J_{a,b}) \right)^{2} da db \right]^{1/2}}{DL2 (X)^2 = \int_{[0,1]^d} [(A(X,J_{a,b})/n - Vol(J_{a,b})]^2 da db}
+where \eqn{a = (a_{1}; ... ; a_{d})'}{a = (a1; ... ; ad)'}, \eqn{b = (b_{1};...; b_{d})'}{b = (b1;...; bd)'} and \eqn{J_{a,b} =
+[a_{1}; b_{1}) \times ... \times [a_{d};b_{d})}{J_{a,b} =
+[a1; b1) X ... X [ad;bd)}. The other L2-discrepancies are defined according to the same principle with different form from the subset \eqn{J}.
+Among all the possibilities, discrepancyCriteria implements only the L2 discrepancies because it can be expressed analytically even for high dimension.
 
-Centered L2-discrepancy is computed using the analytical expression done by Hickernell
-(1998). The user will refer to Pleming and Manteufel (2005) to have more details about 
-the wrap around discrepancy.
+
+Centered L2-discrepancy is computed using the analytical expression done by Hickernell (1998). The user will refer to Pleming and Manteufel (2005) to have more details about the wrap around discrepancy.
 }
 
 \value{A real number equal to the centered L2-discrepancy of the \code{design}.}

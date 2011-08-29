@@ -1,4 +1,4 @@
-dmaxDesign <- function(n,dimension,range,niter_max){
+dmaxDesign <- function(n,dimension,range,niter_max=1000){
 	# The spherical variogram model
 	variosphe <- function(h,a){
 		if (h <= a){
@@ -81,7 +81,6 @@ dmaxDesign <- function(n,dimension,range,niter_max){
 	 }# End while
 
 	# Outputs:
- 	return(list(n=n,dimension=dimension,range=range,design_init=p_init,
-			design=p,det_init=Deter[1],det_end=dinit))
+ 	return(list(n=n,dimension=dimension,range=range,niter_max=niter_max,design_init=p_init,design=p,det_init=Deter[1],det_end=dinit))
  }
 

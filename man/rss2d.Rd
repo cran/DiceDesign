@@ -5,7 +5,9 @@
 For a 2-dimensional design, the 2D radial scanning statistic (RSS) scans angularly the domain. In each direction, it compares the distribution of projected points to their theoretical distribution under the assumption that all design points are drawn from uniform distribution. For a d-dimensional design, all pairs of dimensions are scanned.The RSS detects the defects of low discrepancy sequences or orthogonal arrays, and can be used for selecting space-filling designs.}
 	
 \usage{
-rss2d(design, lower, upper, gof.test.type="greenwood", gof.test.stat=NULL, transform=NULL, n.angle=360, graphics=1, trace=TRUE, lines.lwd = 1, lines.lty = "dotted", ...)
+rss2d(design, lower, upper, gof.test.type="greenwood", 
+   gof.test.stat=NULL, transform=NULL, n.angle=360, graphics=1, 
+   trace=TRUE, lines.lwd = 1, lines.lty = "dotted", ...)
 }
 
 \arguments{
@@ -53,17 +55,23 @@ rss2d(design, lower, upper, gof.test.type="greenwood", gof.test.stat=NULL, trans
 library(randtoolbox)
 
 	# in 2D
-rss <- rss2d(design=sobol(n=20, dim=2), lower=c(0,0), upper=c(1,1), type="l", col="red")
+rss <- rss2d(design=sobol(n=20, dim=2), lower=c(0,0), upper=c(1,1), type="l", 
+   col="red")
 
-	# in 8D. All pairs of dimensions are tried to detect the worst defect (according to the specified goodness-of-fit statistic).
+	# in 8D. 
+	# All pairs of dimensions are tried to detect the worst defect 
+	# (according to the specified goodness-of-fit statistic).
 d <- 8
 n <- 10*d
-rss <- rss2d(design=sobol(n=n, dim=d), lower=rep(0,d), upper=rep(1,d), type="l", col="red")
+rss <- rss2d(design=sobol(n=n, dim=d), lower=rep(0,d), upper=rep(1,d), type="l", 
+   col="red")
 
 # avoid this defect with scrambling ?
 #    1. Faure-Tezuka scrambling (type "?sobol" for more details and options)
-rss <- rss2d(design=sobol(n=n, dim=d, scrambling=2), lower=rep(0,d), upper=rep(1,d), type="l", col="red")
+rss <- rss2d(design=sobol(n=n, dim=d, scrambling=2), lower=rep(0,d), 
+   upper=rep(1,d), type="l", col="red")
 #    2. Owen scrambling
-rss <- rss2d(design=sobol(n=n, dim=d, scrambling=1), lower=rep(0,d), upper=rep(1,d), type="l", col="red")
+rss <- rss2d(design=sobol(n=n, dim=d, scrambling=1), lower=rep(0,d), 
+   upper=rep(1,d), type="l", col="red")
 }
 

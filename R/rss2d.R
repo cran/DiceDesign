@@ -125,7 +125,6 @@ if (graphics>=0) {
  	sin.theta.max <- subdiv.halfcircle[index.max, 2]
  	dir.max <- c(cos.theta.max, sin.theta.max)
 	
-	 	
 	if (is.element(graphics, c(0,1))) {
 		par(mfrow=c(1,2+graphics))
 		plot(design, xlim=c(-1,1), ylim=c(-1,1), 
@@ -160,6 +159,7 @@ if (graphics>=0) {
 		for (i in 1:n) lines(c(design[i,1], projections[i]*cos.theta.max), c(design[i,2], projections[i]*sin.theta.max), lty=lines.lty, lwd=lines.lwd)
  	}
 	
+	par(mfrow=c(1,1))
 }
 
 return(list(global.stat=global.stat, worst.case=pair.worst, worst.dir=dir.max, stat=as.numeric(anglewise.stat), angle=as.numeric(theta), curve=cbind(c(rss.curve.x,-rss.curve.x), c(rss.curve.y,-rss.curve.y)),  gof.test.stat=gof.test.stat))

@@ -25,8 +25,8 @@ data(OA131)
 OA <- (OA131 + 0.5)/7
 
 pairs(OA, xlim=c(0,1), ylim=c(0,1))
-library(lattice)
-cloud(x3~x1+x2, data=OA, xlim=c(0,1), ylim=c(0,1), zlim=c(0,1), screen = list(z = 50, x = -70, y = 0))
+\dontrun{library(lattice)
+cloud(x3~x1+x2, data=OA, xlim=c(0,1), ylim=c(0,1), zlim=c(0,1), 
+    screen = list(z = 50, x = -70, y = 0))}
 }
-
 \keyword{datasets}

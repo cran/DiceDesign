@@ -5,7 +5,9 @@
 For a 3-dimensional design, the 3D radial scanning statistic (RSS) scans angularly the domain. In each direction, it compares the distribution of projected points to their theoretical distribution under the assumption that all design points are drawn from uniform distribution. For a d-dimensional design, all triplets of dimensions are scanned. The RSS detects the defects of low discrepancy sequences or orthogonal arrays, and can be used for selecting space-filling designs.}
 
 \usage{
-rss3d(design, lower, upper, gof.test.type = "greenwood", gof.test.stat = NULL, transform = NULL, n.angle = 60, graphics = 1, trace = TRUE)
+rss3d(design, lower, upper, gof.test.type = "greenwood", 
+  gof.test.stat = NULL, transform = NULL, n.angle = 60, 
+  graphics = 1, trace = TRUE)
 }
 
 \arguments{
@@ -71,12 +73,15 @@ print(rss$worst.dir)
 data(OA131_scrambled)
 OA2 <- OA131_scrambled
 
-rss <- rss2d(OA2, lower=c(0,0,0), upper=c(1,1,1))    # no feature is detected by the 2D RSS
-rss <- rss3d(OA2, lower=c(0,0,0), upper=c(1,1,1))	# 4 clusters are detected by the 3D RSS
+# no feature is detected by the 2D RSS:
+rss <- rss2d(OA2, lower=c(0,0,0), upper=c(1,1,1))    
+# 4 clusters are detected by the 3D RSS:
+rss <- rss3d(OA2, lower=c(0,0,0), upper=c(1,1,1))	
 
 	
 	# Defect detection of 8D Sobol sequences
-	# All triplets of dimensions are tried to detect the worst defect (according to the specified goodness-of-fit statistic).
+	# All triplets of dimensions are tried to detect the worst defect 
+	# (according to the specified goodness-of-fit statistic).
 	# requires randtoolbox library to generate the Sobol sequence
 \dontrun{
 library(randtoolbox)
