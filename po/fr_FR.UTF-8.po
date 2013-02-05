@@ -1,0 +1,27 @@
+# translation of DiceDesign.pot
+# Delphine Dupuy, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DiceDesign-1.2\n"
+"Report-Msgid-Bugs-To:  \n"
+"POT-Creation-Date: 2013-02-11 22:25+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr-FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: C_StraussDesign.c:62
+msgid "Strauss: cannot allocate memory"
+msgstr "Strauss: impossible d allouer la memoire"
+
+#: C_StraussDesign.c:201
+msgid "C_StraussDesign: cannot allocate memory for v"
+msgstr "C_StraussDesign : impossible d allouer la memoire pour v"
+
+#: C_StraussDesign.c:207
+msgid "C_StraussDesign: cannot allocate memory for v[dim]"
+msgstr "C_StraussDesign : impossible d allouer la memoire pour v[dim]"

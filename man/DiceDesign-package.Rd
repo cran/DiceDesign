@@ -5,34 +5,41 @@
 \title{Designs of Computer Experiments}
 \description{Space-Filling Designs (SFD) and criteria of uniformity.}
 \details{\tabular{ll}{
-	Package: \tab DiceDesignGamma\cr
+	Package: \tab DiceDesign\cr
 	Type: \tab Package\cr
-	Version: \tab 1.1\cr
-	Date: \tab 2011-08-29\cr
+	Version: \tab 1.2\cr
+	Date: \tab 2013-02-05\cr
 	License: \tab GPL-3\cr
 	}
 This package provides tools to create some specific Space-Filling Design (SFD) and to test their quality:
 \itemize{
-    \item Strauss SFD and Maximum entropy SFD,
+    \item Strauss SFD and Maximum entropy SFD, WSP design
+    \item Optimal (low-discrepancy and maximin) Latin Hypercube Sample (LHS) designs by simulated annealing and genetic algorithms,
     \item Discrepancies criteria, distance measures,
+    \item Minimal spanning tree criteria,
     \item Radial scanning statistic}
 }
 
-\author{J. Franco, D. Dupuy and O. Roustant. Thanks to A. Jourdan for discussions about OA131.
+\author{J. Franco, D. Dupuy, O. Roustant, G. Damblin and B. Iooss. Thanks to A. Jourdan for discussions about OA131.
 
-(maintainer: D. Dupuy \email{dupuy@emse.fr})}
+(maintainer: Celine Helbert \email{Celine.Helbert@ec-lyon.fr})}
 
-\note{This work was conducted within the frame of the DICE (Deep Inside Computer Experiments) Consortium between ARMINES, Renault, EDF, IRSN, ONERA and TOTAL S.A. (http://emse.dice.fr/).
+\note{Part of this work was conducted within the frame of the DICE (Deep Inside Computer Experiments) Consortium between ARMINES, Renault, EDF, IRSN, ONERA and TOTAL S.A. (http://dice.emse.fr/).
 
 In this package only Faure's sequence is implemented.
 Note that the \pkg{randtoolbox} package provides the following quasi
 random sequences: the Sobol sequence, the Halton (hence Van
 Der Corput) sequence and the Torus sequence (also known as
 Kronecker sequence).
-
-We refer to the \pkg{lhs} package to construct Latin Hypercube Designs.}
+Note also that the \pkg{lhs} package provides other types of algorithms to compute optimized LHS.
+}
 
 \references{
+
+Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of space filling designs : optimization algorithms and subprojection properties,
+\emph{Journal of Simulation, submitted}.
+\url{http://www.gdr-mascotnum.fr/doku.php?id=iooss1}
+
 Fang K.-T., Li R. and Sudjianto A. (2006) Design and Modeling for Computer Experiments, \emph{Chapman & Hall}.
 
 Santner T.J., Williams B.J. and Notz W.I. (2003) The Design and Analysis of Computer Experiments, \emph{Springer}, 121-161.
@@ -56,6 +63,11 @@ plot(p$design,xlim=c(0,1),ylim=c(0,1))
 dp <- discrepancyCriteria(p$design,type=c('L2','C2'))
 # Coverage measure
 covp <- coverage(p$design)
+
+# *******************************
+# Criteria: Minimal Spanning Tree
+# *******************************
+mstCriteria(p$design,plot2d=TRUE)
 
 # ****************************************************************
 # Radial scanning statistic: Detection of defects of Sobol designs

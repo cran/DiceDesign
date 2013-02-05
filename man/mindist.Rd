@@ -31,9 +31,7 @@ and modeling in computer experiments}, Handbook of Statistics, 22, 231-261.
 
 \author{J. Franco}
 
-\seealso{ other distance criteria like \code{\link{meshRatio}} and \code{\link{mindist}}.
-
-discrepancy measures provided by \code{\link{discrepancyCriteria}}.}
+\seealso{ other distance criteria like \code{\link{meshRatio}} and \code{\link{phiP}}, discrepancy measures provided by \code{\link{discrepancyCriteria}}.}
 
 \examples{
 dimension <- 2

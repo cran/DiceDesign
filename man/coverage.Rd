@@ -25,7 +25,7 @@ samples in hypercubes}
 
 \author{J. Franco}
 
-\seealso{other distance criteria like \code{\link{meshRatio}} and \code{\link{mindist}}.
+\seealso{other distance criteria like \code{\link{meshRatio}}, \code{\link{phiP}} and \code{\link{mindist}}.
 
 discrepancy measures provided by \code{\link{discrepancyCriteria}}.}
 

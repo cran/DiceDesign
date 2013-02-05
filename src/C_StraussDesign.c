@@ -3,6 +3,15 @@
 #include <string.h>
 #include <stdio.h>
 #include <time.h>
+#include <R.h>  /* to include Rconfig.h */
+
+#ifdef ENABLE_NLS
+          #include <libintl.h>
+          #define _(String) dgettext ("DiceDesign", String)
+          /* replace pkg as appropriate */
+          #else
+          #define _(String) (String)
+          #endif
 
 #define MAX(a,b) (a<b ? b:a)
 #define MIN(a,b) (a<b ? a:b)
@@ -50,7 +59,8 @@ void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, cons
   /*   Allocation of memory of a d-dimensional vector u corresponding to the proposed new point  */
   double *u = (double*) malloc((*d) * sizeof(double));
   if (!u){
-    fprintf(stderr, "Strauss : cannot alocate %u bytes, aborting ",(*d)*sizeof(double) ); exit(-1);
+    error(_("Strauss: cannot allocate memory"));
+    // fprintf(stderr, "Strauss : cannot alocate %u bytes, aborting ",(*d)*sizeof(double) ); exit(-1);
   }
 	  
   if (*alpha != 0){
@@ -188,12 +198,14 @@ void C_StraussDesign(const double *init, const int *n,const int *d, const int *c
   /* Construction of the initial design of experiments (random distribution of n points in the unit cube [0,1]^d) */
   double **v = (double**) malloc ((*d) * sizeof(double*)); 
   if (!v){
-    fprintf(stderr, "C_StraussDesign: cannot alocate %zu bytes, aborting ",(*d) * sizeof(double*) ); 	exit(-1);
+    error(_("C_StraussDesign: cannot allocate memory for v"));
+    // fprintf(stderr, "C_StraussDesign: cannot alocate %zu bytes, aborting ",(*d) * sizeof(double*) ); 	exit(-1);
   }
   for (dim=0; dim<*d; dim++){
     v[dim] = (double*) malloc ((*n) * sizeof(double));
     if (!v[dim]){
-      fprintf(stderr, "C_StraussDesign: cannot alocate %zu bytes, aborting ",(*n)*sizeof(double) ); 	exit(-1);
+       error(_("C_StraussDesign: cannot allocate memory for v[dim]"));
+      // fprintf(stderr, "C_StraussDesign: cannot alocate %zu bytes, aborting ",(*n)*sizeof(double) ); 	exit(-1);
     }
   }
   C_mat_alea(init,d,n,v);

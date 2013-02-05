@@ -2,4 +2,8 @@ useDynLib(DiceDesign)
 
 export(coverage,discrepancyCriteria,
 	dmaxDesign,factDesign,meshRatio,mindist,
-	runif.faure,straussDesign, rss2d, rss3d, unif.test.quantile, unif.test.statistic)
+	runif.faure,straussDesign, rss2d, rss3d, 
+  unif.test.quantile, unif.test.statistic,
+  wspDesign,phiP,mstCriteria)
+
+export(discrepSA_LHS,discrepESE_LHS,maximinSA_LHS,maximinESE_LHS)

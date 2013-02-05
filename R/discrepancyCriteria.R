@@ -57,7 +57,7 @@ discrepancyCriteria <- function(design,type='all'){
 		}
 		R <- c(R,DisC2 = sqrt(((13/12)^dimension)-((2/n)*s1) + ((1/n^2)*s2)))
 	}
-	# star L2-discrepancy
+	# L2-discrepancy
 	#------------------------
 	if(DisL2==TRUE){
 		s1 <- 0; s2 <- 0

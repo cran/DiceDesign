@@ -26,8 +26,8 @@ see \pkg{randtoolbox} or \pkg{fOptions} packages for other low discrepancy seque
 input arguments detailed before, plus the following component:
   \item{design   }{the design of experiments}
 }
-\references{Faure H. (1982) \emph{Discrépance de suites associées
-à un système de numération (en dimension s)}, Acta Arith. 41,
+\references{Faure H. (1982) \emph{Discrepance de suites associees
+a un systeme de numeration (en dimension s)}, Acta Arith. 41,
 337-351 }
 
 \author{J. Franco}

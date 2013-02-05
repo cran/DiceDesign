@@ -18,7 +18,7 @@ if (type=="greenwood") {
 	if (n>500) {
 		q <- qnorm(1-alpha/2, mean=2*n/(n+2), sd=sqrt(4/n))
 	} else {
-		data(greenwood.table)
+                # greenwood.table is loaded via sysdat.rda
 		f <- approxfun(greenwood.table[,1], greenwood.table[,c(2,3,4,5)[index]])
 		q <- f(n)
 	}

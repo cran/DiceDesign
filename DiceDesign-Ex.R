@@ -1,7 +1,6 @@
 pkgname <- "DiceDesign"
 source(file.path(R.home("share"), "R", "examples-header.R"))
 options(warn = 1)
-options(pager = "console")
 library('DiceDesign')
 
 assign(".oldSearch", search(), pos = 'CheckExEnv')
@@ -32,6 +31,11 @@ plot(p$design,xlim=c(0,1),ylim=c(0,1))
 dp <- discrepancyCriteria(p$design,type=c('L2','C2'))
 # Coverage measure
 covp <- coverage(p$design)
+
+# *******************************
+# Criteria: Minimal Spanning Tree
+# *******************************
+mstCriteria(p$design,plot2d=TRUE)
 
 # ****************************************************************
 # Radial scanning statistic: Detection of defects of Sobol designs
@@ -131,6 +135,55 @@ coverage(X)
 
 
 cleanEx()
+nameEx("discrepESE_LHS")
+### * discrepESE_LHS
+
+flush(stderr()); flush(stdout())
+
+### Name: discrepESE_LHS
+### Title: Enhanced Stochastic Evolutionnary (ESE) algorithm for Latin
+###   Hypercube Sample (LHS) optimization via L2-discrepancy criteria
+### Aliases: discrepESE_LHS
+### Keywords: design
+
+### ** Examples
+
+## Not run: 
+##D dimension <- 2
+##D n <- 10
+##D library(lhs)
+##D X <- randomLHS(n,dimension)
+##D discrepESE_LHS(X,T0=0.005*discrepancyCriteria(X)[[1]],inner_it=100,J=50,it=2)
+## End(Not run)
+
+
+
+cleanEx()
+nameEx("discrepSA_LHS")
+### * discrepSA_LHS
+
+flush(stderr()); flush(stdout())
+
+### Name: discrepSA_LHS
+### Title: Simulated annealing (SA) routine for Latin Hypercube Sample
+###   (LHS) optimization via L2-discrepancy criteria
+### Aliases: discrepSA_LHS
+### Keywords: design
+
+### ** Examples
+
+dimension <- 2
+n <- 10
+library(lhs)
+X <- randomLHS(n,dimension)
+discrepSA_LHS(X,T0=10,c=0.95,it=2000,criterion="DC2")
+## Not run: 
+##D   discrepSA_LHS(X,T0=10,c=0.95,it=2000,criterion="DC2",profile="LINEAR_MORRIS")
+## End(Not run)
+
+
+
+cleanEx()
 nameEx("discrepancyCriteria")
 ### * discrepancyCriteria
 
@@ -194,6 +247,54 @@ plot(g$design,xlim=c(0,1),ylim=c(0,1))
 
 
 cleanEx()
+nameEx("maximinESE_LHS")
+### * maximinESE_LHS
+
+flush(stderr()); flush(stdout())
+
+### Name: maximinESE_LHS
+### Title: Enhanced Stochastic Evolutionnary (ESE) algorithm for Latin
+###   Hypercube Sample (LHS) optimization via phiP criteria
+### Aliases: maximinESE_LHS
+### Keywords: design
+
+### ** Examples
+
+dimension <- 2
+n <- 10
+library(lhs)
+X <- randomLHS(n,dimension)
+maximinESE_LHS(X,T0=0.005*phiP(X),inner_it=100,J=50,it=2)
+
+
+
+
+cleanEx()
+nameEx("maximinSA_LHS")
+### * maximinSA_LHS
+
+flush(stderr()); flush(stdout())
+
+### Name: maximinSA_LHS
+### Title: Simulated annealing (SA) routine for Latin Hypercube Sample
+###   (LHS) optimization via phiP criteria
+### Aliases: maximinSA_LHS
+### Keywords: design
+
+### ** Examples
+
+dimension <- 2
+n <- 10
+library(lhs)
+X <- randomLHS(n,dimension)
+maximinSA_LHS(X,T0=10,c=0.95,it=2000)
+## Not run: 
+##D   maximinSA_LHS(X,T0=10,c=0.95,it=2000,profile="LINEAR_MORRIS")
+## End(Not run)
+
+
+
+cleanEx()
 nameEx("meshRatio")
 ### * meshRatio
 
@@ -230,6 +331,46 @@ dimension <- 2
 n <- 40
 X <- matrix(runif(n*dimension),n,dimension)
 mindist(X)
+
+
+
+cleanEx()
+nameEx("mstCriteria")
+### * mstCriteria
+
+flush(stderr()); flush(stdout())
+
+### Name: mstCriteria
+### Title: Deriving the MST criteria
+### Aliases: mstCriteria
+### Keywords: design
+
+### ** Examples
+
+dimension <- 2
+n <- 40
+X <- matrix(runif(n*dimension),n,dimension)
+mstCriteria(X,plot2d=TRUE)
+
+
+
+cleanEx()
+nameEx("phiP")
+### * phiP
+
+flush(stderr()); flush(stdout())
+
+### Name: phiP
+### Title: phiP criterion
+### Aliases: phiP
+### Keywords: design
+
+### ** Examples
+
+dimension <- 2
+n <- 40
+X <- matrix(runif(n*dimension),n,dimension)
+phiP(X)
 
 
 
@@ -377,6 +518,27 @@ S3 <- straussDesign(n=20,dimension=2,RND=0.18,NMC=200,
 plot(S3$design,xlim=c(0,1),ylim=c(0,1))
 rug(S3$design[,1],side=1)
 rug(S3$design[,2],side=2)
+
+
+
+cleanEx()
+nameEx("wspDesign")
+### * wspDesign
+
+flush(stderr()); flush(stdout())
+
+### Name: wspDesign
+### Title: WSP algorithm
+### Aliases: wspDesign
+### Keywords: design
+
+### ** Examples
+
+dimension <- 2
+n <- 100
+X <- matrix(runif(n*dimension),n,dimension)
+m=wspDesign(X,0.1)
+plot(m)
 
 
 
