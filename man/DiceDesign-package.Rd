@@ -22,7 +22,7 @@ This package provides tools to create some specific Space-Filling Design (SFD) a
 
 \author{J. Franco, D. Dupuy, O. Roustant, G. Damblin and B. Iooss. Thanks to A. Jourdan for discussions about OA131.
 
-(maintainer: Celine Helbert \email{Celine.Helbert@ec-lyon.fr})}
+(maintainer: C. Helbert \email{celine.helbert@ec-lyon.fr})}
 
 \note{Part of this work was conducted within the frame of the DICE (Deep Inside Computer Experiments) Consortium between ARMINES, Renault, EDF, IRSN, ONERA and TOTAL S.A. (http://dice.emse.fr/).
 

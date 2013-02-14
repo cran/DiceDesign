@@ -6,7 +6,7 @@
   [0,1]\eqn{^d}{^d}.
 }
 \usage{
-dmaxDesign(n, dimension, range, niter_max=1000)
+dmaxDesign(n, dimension, range, niter_max=1000,seed=NULL)
 }
 
 \arguments{
@@ -14,6 +14,7 @@ dmaxDesign(n, dimension, range, niter_max=1000)
   \item{dimension}{ number of variables }
   \item{range    }{ range of variogram }
   \item{niter_max}{ number of iterations}
+    \item{seed	 }{ seed used to generate uniform design}
 }
 
 \details{Maximum entropy design is a kind of optimal design based
@@ -44,6 +45,7 @@ where \eqn{h_{ij}}{h[i,j]} is the distance between \eqn{x_{i}}{xi} and
   \item{design_init		}{the initial distribution}
   \item{det_init       	}{the value of the determinant for the initial distribution}
   \item{det_end        	}{the value of the determinant at the end of the procedure}
+  \item{seed			}{the value of the seed}
 }
 
 \references{Currin C., Mitchell T., Morris M. and Ylvisaker D. (1991)

@@ -8,7 +8,7 @@
 #ifdef ENABLE_NLS
           #include <libintl.h>
           #define _(String) dgettext ("DiceDesign", String)
-          /* replace pkg as appropriate */
+         /* replace pkg as appropriate */
           #else
           #define _(String) (String)
           #endif
@@ -16,7 +16,7 @@
 #define MAX(a,b) (a<b ? b:a)
 #define MIN(a,b) (a<b ? a:b)
 
-/* Source code to generate a matrix of n random numbers in [0,1]^d (mat de dimension dxn)*/
+/* Source code to write init as a matrix (mat) of n random numbers in [0,1]^d (mat = dxn)*/
 void C_mat_alea( const double *init,const int *d,const int *n,double **mat){
   int point, dim;
   for (point=0; point<*n; point++){
@@ -28,6 +28,7 @@ void C_mat_alea( const double *init,const int *d,const int *n,double **mat){
 
 /* ##############################################################################################/
 ##Jessica FRANCO (2006.10.02)
+## Delphine DUPUY ( 2008.12.20 -> 2013.02.14)
 ## Case with 1D constraints
 ## inputs :
 ##	n 	= number of experiments
@@ -42,18 +43,19 @@ void C_mat_alea( const double *init,const int *d,const int *n,double **mat){
 ##	betaND	=  real which represents the repulsion parameter in nD
 ############################################################################################## */
 
-void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, const int *constraints1D, const double *RND, const double *repulsion, const double *gamma1D, double **v){
+void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, const int *constraints1D, const double *RND, const double *repulsion, const double *gamma1D, const int *seed, double **v){
 
   double R1D = (1.0/(float)*n)*0.75;	/* radius in 1D */
   double gamma = *gamma1D;				/* repulsion parameter in 1D for alpha=0 */
- 
+  int graine = *seed;
+
   double RNDcarre=(*RND)*(*RND); 
   double p,pND,p1D,nu,nx,sum,sumu,betaND,gammaND,pu=0,px=0,nnx,nnu;
   int iunif,dim,point;
   int inmc, k;
 
   /* initialization of the random generator */
-  unsigned int graine=time(NULL);
+  // unsigned int graine=time(NULL);
   srand(graine); 
 
   /*   Allocation of memory of a d-dimensional vector u corresponding to the proposed new point  */
@@ -191,9 +193,11 @@ void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, cons
 ##	nmc 	= number of Monte Carlo iterations
 ##	RND 	= radius in the d-space
 ##	alpha	= potential power (default is 0.5)
-## output : ans = the Strauss-Design finally obtained.
+##      seed   = seed for the generation of the new points
+## output :
+##      ans = the Strauss-Design finally obtained.
 #################################################################################### */
-void C_StraussDesign(const double *init, const int *n,const int *d, const int *constraints1D, const int *nmc, const double *RND, const double *alpha, const double *repulsion, const double *gamma1D, double *ans){
+void C_StraussDesign(const double *init, const int *n,const int *d, const int *constraints1D, const int *nmc, const double *RND, const double *alpha, const double *repulsion, const double *gamma1D,  const int *seed, double *ans){
   int dim, point;
   /* Construction of the initial design of experiments (random distribution of n points in the unit cube [0,1]^d) */
   double **v = (double**) malloc ((*d) * sizeof(double*)); 
@@ -210,8 +214,8 @@ void C_StraussDesign(const double *init, const int *n,const int *d, const int *c
   }
   C_mat_alea(init,d,n,v);
   
-  Strauss(n, d, nmc, alpha, constraints1D, RND,repulsion,gamma1D,v);
-  
+  Strauss(n, d, nmc, alpha, constraints1D, RND,repulsion,gamma1D,seed,v);
+
   /* Writing the coordinate of the final designs 'v' in 'ans' */
   int indix=0;
   for (point=0; point<*n; point++){

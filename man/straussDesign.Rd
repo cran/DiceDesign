@@ -4,7 +4,7 @@
 \title{ Designs based on Strauss process}
 \description{Space-Filling Designs based on Strauss process}
 \usage{straussDesign(n,dimension,RND,alpha=0.5,repulsion=0.001,NMC=1000,
-    constraints1D=0,repulsion1D=0.0001,init=NULL)
+    constraints1D=0,repulsion1D=0.0001,seed=NULL)
 }
 
 \arguments{
@@ -16,8 +16,7 @@
   \item{NMC      }{the number of McMC iterations (this number must be large to converge)}
   \item{constraints1D	}{1 to impose 1D projection constraints, 0 otherwise}
   \item{repulsion1D }{the repulsion parameter in 1D}
-  \item{init}{initial design (default equals \code{NULL} and the initialization corresponds to an uniform distribution)}
-}
+  \item{seed	 }{ seed for the uniform generation of number}}
 
 \details{Strauss designs are Space-Filling designs initially defined from Strauss process:
 \deqn{\pi (X) = k \gamma^{s(X)}}{\pi (X) = k gamma^s(X)}
@@ -43,13 +42,14 @@ The input parameters of \code{straussDesign} function can be interpreted as foll
 \value{A list containing:
   \item{n         }{the number of experiments}
   \item{dimension }{the number \eqn{d} of variables}
-  \item{init	  }{the initial distribution of \eqn{n} points \eqn{[0,1]^{d}}}
+  \item{design_init}{the initial distribution of \eqn{n} points \eqn{[0,1]^{d}}}
   \item{radius    }{the radius of interaction}
   \item{alpha	  }{the potential power alpha}
   \item{repulsion }{the repulsion parameter \eqn{\gamma}{\gamma}}
   \item{NMC       }{the number of iterations McMC}
   \item{constraints1D  }{an integer indicating if constraints on the factorial axis are imposed. If its value is different from zero, a component \code{repulsion1D} containing the value of the repulsion parameter \eqn{\gamma}{gamma} in dimension 1 is added at the list.}
   \item{design    }{the design of experiments in [0,1]\eqn{^{d}}}
+  \item{seed	  }{the seed corresponding to the design}
 }
 \author{J. Franco}
 

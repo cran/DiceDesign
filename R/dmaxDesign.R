@@ -1,4 +1,10 @@
-dmaxDesign <- function(n,dimension,range,niter_max=1000){
+dmaxDesign <- function(n,dimension,range,niter_max=1000,seed=NULL){
+	# if no seed is provided in argument, choice of the seed for 'runif'
+	if (is.null(seed)){
+		seed <- as.numeric(Sys.time())
+	}
+	set.seed(seed)
+	
 	# The spherical variogram model
 	variosphe <- function(h,a){
 		if (h <= a){
@@ -81,6 +87,6 @@ dmaxDesign <- function(n,dimension,range,niter_max=1000){
 	 }# End while
 
 	# Outputs:
- 	return(list(n=n,dimension=dimension,range=range,niter_max=niter_max,design_init=p_init,design=p,det_init=Deter[1],det_end=dinit))
+ 	return(list(n=n,dimension=dimension,range=range,niter_max=niter_max,design_init=p_init,design=p,det_init=Deter[1],det_end=dinit,seed=seed))
  }
 
