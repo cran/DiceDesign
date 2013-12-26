@@ -1,6 +1,7 @@
 discrepancyCriteria <- function(design,type='all'){
 	#---------------------------------------
 	# source code by Jessica FRANCO (2006.10.05)
+  # modified by Bertrand Iooss (2013.26.12)
 	#---------------------------------------
 	# inputs
 	# - design of experiments
@@ -26,18 +27,20 @@ discrepancyCriteria <- function(design,type='all'){
 	R <- list()
 	DisC2 <- FALSE
 	DisL2 <- FALSE
+	DisL2star <- FALSE
 	DisM2 <- FALSE
 	DisS2 <- FALSE
 	DisW2 <- FALSE
 	
 	if (length(type)==1 && type=='all'){
-		type <- c('C2','L2','M2','S2','W2')	
+		type <- c('C2','L2','L2star','M2','S2','W2')	
 	}
 	for(i in 1:length(type)){
 		type_ <- type[i]
 	  	switch(type_,
         		C2 = {DisC2 <- TRUE},
-        		L2 = {DisL2 <- TRUE},
+	  	      L2 = {DisL2 <- TRUE},
+	  	      L2star = {DisL2star <- TRUE},
         		M2 = {DisM2 <- TRUE},
         		S2 = {DisS2 <- TRUE},
         		W2 = {DisW2 <- TRUE})
@@ -60,21 +63,44 @@ discrepancyCriteria <- function(design,type='all'){
 	# L2-discrepancy
 	#------------------------
 	if(DisL2==TRUE){
-		s1 <- 0; s2 <- 0
-		for (i in 1:n){
-			p  <- prod(X[i,]*(1-X[i,]))
-			s1 <- s1+p
-			for (k in 1:n){
-      			q <- 1
-     				for (j in 1:dimension){
-		 			q <- q*(1-max(X[i,j],X[k,j]))*min(X[i,j],X[k,j])
-      			}
-     				s2 <- s2+q
-  			}
-		}
-		R <- c(R,DisL2 = sqrt(12^(-dimension) - (((2^(1-dimension))/n)*s1) + ((1/n^2)*s2)))
+	  s1 <- 0; s2 <- 0
+	  for (i in 1:n){
+	    p  <- prod(X[i,]*(1-X[i,]))
+	    s1 <- s1+p
+	    for (k in 1:n){
+	      q <- 1
+	      for (j in 1:dimension){
+	        q <- q*(1-max(X[i,j],X[k,j]))*min(X[i,j],X[k,j])
+	      }
+	      s2 <- s2+q
+	    }
+	  }
+	  R <- c(R,DisL2 = sqrt(12^(-dimension) - (((2^(1-dimension))/n)*s1) + ((1/n^2)*s2)))
 	}
-
+	
+	# L2star-discrepancy
+	#------------------------
+	if(DisL2star==TRUE){
+	  dL2<-0
+	  for (j in 1:n){
+      for (i in 1:n){
+	    if(i!=j){
+        t<-c()
+	      for (l in 1:dimension) t<-c(t,1-max(X[i,l],X[j,l]))
+	      t<-(prod(t))/(n^2)
+	    }
+	    else{
+        t1<-1-X[i,]
+        t1<-prod(t1)
+        t2<-1-X[i,]^2
+        t2<-prod(t2)
+        t<-t1/(n^2)-((2^(1-dimension))/n)*t2
+	    }
+      dL2<-dL2+t}
+	  }  
+	  R <- c(R,DisL2star = sqrt(3^(-dimension)+dL2))
+	}
+	
 	# modified L2-discrepancy
 	#------------------------
 	if(DisM2 == TRUE){

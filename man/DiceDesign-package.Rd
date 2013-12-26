@@ -3,18 +3,19 @@
 \alias{DiceDesign}
 \docType{package}
 \title{Designs of Computer Experiments}
-\description{Space-Filling Designs (SFD) and criteria of uniformity.}
+\description{Space-Filling Designs (SFD) and space-filling criteria (distance-based and uniformity-based).}
 \details{\tabular{ll}{
 	Package: \tab DiceDesign\cr
 	Type: \tab Package\cr
 	Version: \tab 1.2\cr
-	Date: \tab 2013-02-05\cr
+	Date: \tab 2013-26-12\cr
 	License: \tab GPL-3\cr
 	}
 This package provides tools to create some specific Space-Filling Design (SFD) and to test their quality:
 \itemize{
+    \item Latin Hypercube Design (randomized or centered)
     \item Strauss SFD and Maximum entropy SFD, WSP design
-    \item Optimal (low-discrepancy and maximin) Latin Hypercube Sample (LHS) designs by simulated annealing and genetic algorithms,
+    \item Optimal (low-discrepancy and maximin) Latin Hypercube Design by simulated annealing and genetic algorithms,
     \item Discrepancies criteria, distance measures,
     \item Minimal spanning tree criteria,
     \item Radial scanning statistic}
@@ -22,7 +23,7 @@ This package provides tools to create some specific Space-Filling Design (SFD) a
 
 \author{J. Franco, D. Dupuy, O. Roustant, G. Damblin and B. Iooss. Thanks to A. Jourdan for discussions about OA131.
 
-(maintainer: C. Helbert \email{celine.helbert@ec-lyon.fr})}
+(maintainer: Celine Helbert \email{Celine.Helbert@ec-lyon.fr})}
 
 \note{Part of this work was conducted within the frame of the DICE (Deep Inside Computer Experiments) Consortium between ARMINES, Renault, EDF, IRSN, ONERA and TOTAL S.A. (http://dice.emse.fr/).
 
@@ -36,8 +37,8 @@ Note also that the \pkg{lhs} package provides other types of algorithms to compu
 
 \references{
 
-Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of space filling designs : optimization algorithms and subprojection properties,
-\emph{Journal of Simulation, submitted}.
+Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of space filling designs: optimization of Latin Hypercube Samples and subprojection properties,
+\emph{Journal of Simulation,} 7:276-289, 2013.
 \url{http://www.gdr-mascotnum.fr/doku.php?id=iooss1}
 
 Fang K.-T., Li R. and Sudjianto A. (2006) Design and Modeling for Computer Experiments, \emph{Chapman & Hall}.

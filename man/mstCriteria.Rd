@@ -14,12 +14,15 @@
 \details{In our context, a MST is a tree whose the sum of the lengthes of the edges is minimal. Even if unicity does not hold, the overall length is stable. The mean and the standard deviation of the lengthes of the edges are usually derived to analyze the geometric profile of the design. A large mean and a small standard deviation characterize a so-called quasi-periodic design.}
 
 
-\value{A list with two components. The first component is a list: each component of it contains a vector with all vertices which are connected with the experiment corresponding to the number of the components. The second component is a vector with both the mean and the standard deviation values of the lengthes of the edges.}
+\value{A list containing two components:
+\item{tree}{a list containing the MST: each component of it contains a vector with all vertices which are connected with the experiment corresponding to the number of the components}
+\item{stats}{vector with both the mean and the standard deviation values of the lengthes of the edges}
+}
 
 \references{
 
-Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of sapce filling designs : optimization algorithms and subprojection properties,
-\emph{Journal of Simulation, submitted}.
+Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of space filling designs: optimization of Latin hypercube samples and subprojection properties,
+\emph{Journal of Simulation,} 7:276-289, 2013.
 \url{http://www.gdr-mascotnum.fr/doku.php?id=iooss1}
 
 Dussert, C., Rasigni, G., Rasigni, M., and Palmari, J. (1986). Minimal spanning tree: A new approach for studying order and disorder. Physical Review B, 34(5):3528-3531.

@@ -24,7 +24,7 @@ When \eqn{p} tends to infinity, optimizing a design with \eqn{\phi_p} is equival
 
 \references{
 
-Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of sapce filling designs : optimization algorithms and subprojection properties, \emph{Journal of Simulation, submitted}.
+Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of sapce filling designs: optimization of Latin Hypercube Samples and subprojection properties, \emph{Journal of Simulation,} 7:276-289, 2013.
 \url{http://www.gdr-mascotnum.fr/doku.php?id=iooss1}
 
 Fang K.-T., Li R. and Sudjianto A. (2006). Design and Modeling for Computer Experiments, \emph{Chapman & Hall}.

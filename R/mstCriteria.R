@@ -68,6 +68,6 @@ mstCriteria <- function(design,plot2d="FALSE")
        if (plot2d=="TRUE")
           {lines(rbind(m[p,],m[new_p,]),col='red')}
     }
-       return(list(Tree,c(mean(x),sqrt(var(x)))))
+       return(list(tree=Tree,stats=c(mean(x),sqrt(var(x)))))
 }
 

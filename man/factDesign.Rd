@@ -11,8 +11,8 @@ factDesign(dimension, levels)
 }
 
 \arguments{
-  \item{dimension}{an interger given the number of input variables }
-  \item{levels   }{an interger given the number of levels}
+  \item{dimension}{an integer given the number of input variables }
+  \item{levels   }{an integer given the number of levels}
 }
 
 \details{It is possible to take a different number of levels for

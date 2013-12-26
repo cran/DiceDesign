@@ -14,12 +14,16 @@
 \details{WSP enables to create a design D which is such that mindist(D)>dmin. However, it cannot assess the number of experiments. Similarly to straussDesign function, WSP is a powerful algorithm to construct space filling designs in high dimension} 
 
 
-\value{A matrix corresponding to the design of experiments.}
+\value{A list containing:
+  \item{InitialDesign}{the starting design}
+  \item{dmin}{minimum bound for mindist value of the final design}
+  \item{design }{the matrix of the final design}
+  }
 
 \references{
 
 J. Santiago, M. Claeys-Bruno, M.Sergent (2012). Construction of space filling designs using WSP algorithm for high dimensional spaces,
-\emph{Chenometrics and Intelligent Laboratory Systems 113:26-31}
+\emph{Chenometrics and Intelligent Laboratory Systems}, 113:26-31.
 
 }
 
@@ -31,7 +35,7 @@ dimension <- 2
 n <- 100
 X <- matrix(runif(n*dimension),n,dimension)
 m=wspDesign(X,0.1)
-plot(m)
+plot(m$design)
 }
 
 \keyword{ design }

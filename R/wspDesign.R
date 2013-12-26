@@ -7,7 +7,8 @@
 #args :  design     : matrix (n,d) containing n design points               |
 #                     d is the dimension                                    |
 #        dmin       : minimal bound for mindist final design                |    
-#out:    Mres       : space filling design according to mindist criterion   |
+#out :                a list containing the input arguments plus            |
+#                   the space filling design according to mindist criterion |
 #---------------------------------------------------------------------------|
 
 
@@ -45,6 +46,9 @@ wspDesign <- function(design,dmin){           #  dmin :must be given
               x<-c(x,base)}
               
    Mres <- m[x,]  # Final matrix    #final space-filling design
+  
+  return(list(InitialDesign=design,dmin=dmin,design=Mres))
+  
    return(Mres) 
 }
 

@@ -4,6 +4,6 @@ export(coverage,discrepancyCriteria,
 	dmaxDesign,factDesign,meshRatio,mindist,
 	runif.faure,straussDesign, rss2d, rss3d, 
   unif.test.quantile, unif.test.statistic,
-  wspDesign,phiP,mstCriteria)
+  wspDesign,phiP,mstCriteria,lhsDesign)
 
 export(discrepSA_LHS,discrepESE_LHS,maximinSA_LHS,maximinESE_LHS)
