@@ -81,7 +81,36 @@ discrepSA_LHS<-function(design,T0=10,c=0.95,it=2000,criterion="C2",profile="GEOM
     List.res <- list(design,T0,c,it,criterion,profile,Imax,m,crit,temp,proba)
     names(List.res) <-c("InitialDesign","TO","c","it","criterion","profile","Imax","design","critValues","tempValues","probaValues")
   }
-   
+  
+  if(profile=="LINEAR"){
+  
+  i<-0
+  T<-T0
+  v<-discrepancyCriteria(m,type='C2')[[1]]  
+  crit <- v
+  while(T>0 & i<it){
+    
+    G<-lhs_EP(m)
+    g<-discrepancyC2_EP(m,G[[2]],G[[3]],G[[4]],v^2)
+    g<-sqrt(g)
+    
+    diff<-min(exp((v-g)/T),1)
+    if (diff == 1){m<-G[[1]]
+                   v<-g  
+    }
+    else         {
+      Bernoulli<-rbinom(1,1,diff)
+      if (Bernoulli==1){m=G[[1]]
+                        v<-g    }}
+    i<-i+1
+    crit <- c(crit,v) ; temp <- c(temp,T) ; proba <- c(proba,diff)
+    T<-T0*(1-i/it)
+  }
+  
+  List.res <- list(design,T0,c,it,criterion,profile,Imax,m,crit,temp,proba)
+  names(List.res) <-c("InitialDesign","TO","c","it","criterion","profile","Imax","design","critValues","tempValues","probaValues")
+}
+
 if(profile=="MC"){
   
   i<-0
@@ -201,7 +230,33 @@ if(profile=="MC"){
            }
            List.res <- list(design,T0,c,it,criterion,profile,Imax,m,crit,temp,proba)
            names(List.res) <-c("InitialDesign","TO","c","it","criterion","profile","Imax","design","critValues","tempValues","probaValues")
-        }   
+    }   
+    if(profile=="LINEAR")
+{i<-0
+ T<-T0
+ v<-discrepancyCriteria(m,type='L2star')[[1]]  
+ crit <- v
+ while(T>0 & i<it){
+   
+   G<-lhs_EP(m)
+   g<-discrepancyL2_EP(m,G[[2]],G[[3]],G[[4]],v^2)
+   g<-sqrt(g)
+   
+   diff<-min(exp((v-g)/T),1)
+   if (diff == 1){m<-G[[1]]
+                  v<-g    
+   }
+   else         {
+     Bernoulli<-rbinom(1,1,diff)
+     if (Bernoulli==1){m=G[[1]]
+                       v<-g    }}
+   i<-i+1
+   crit <- c(crit,v) ; temp <- c(temp,T) ; proba <- c(proba,diff)
+   T<-T0*(1-i/it)
+ }
+ List.res <- list(design,T0,c,it,criterion,profile,Imax,m,crit,temp,proba)
+ names(List.res) <-c("InitialDesign","TO","c","it","criterion","profile","Imax","design","critValues","tempValues","probaValues")
+}   
       if(profile=="GEOM_MORRIS")
 
        {
@@ -281,6 +336,32 @@ if(profile=="MC"){
            names(List.res) <-c("InitialDesign","TO","c","it","criterion","profile","Imax","design","critValues","tempValues","probaValues")
            
            }
+     if(profile=="LINEAR")
+     {i<-0
+      T<-T0
+      v<-discrepancyCriteria(m,type='W2')[[1]]  
+      crit <- v
+      while(T>0 & i<it){
+        
+        G<-lhs_EP(m)
+        g<-discrepancyW2_EP(m,G[[2]],G[[3]],G[[4]],v^2)
+        g<-sqrt(g)
+        
+        diff<-min(exp((v-g)/T),1)
+        if (diff == 1){m<-G[[1]]
+                       v<-g   
+        }
+        else         {
+          Bernoulli<-rbinom(1,1,diff)
+          if (Bernoulli==1){m=G[[1]]
+                            v<-g    }}
+        i<-i+1
+        crit <- c(crit,v) ; temp <- c(temp,T) ; proba <- c(proba,diff)
+        T<-T0*(1-i/it)
+      }
+      List.res <- list(design,T0,c,it,criterion,profile,Imax,m,crit,temp,proba)
+      names(List.res) <-c("InitialDesign","TO","c","it","criterion","profile","Imax","design","critValues","tempValues","probaValues")
+     }
      
        if(profile=="GEOM_MORRIS")
 

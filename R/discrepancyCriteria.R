@@ -145,7 +145,7 @@ discrepancyCriteria <- function(design,type='all'){
      				s1 <- s1+p
   			}
 		}
-		R <- c(R , DisW2 = sqrt(((-(4/3)^dimension) + ((1/n^2)*s1))))
+		R <- c(R , DisW2 = sqrt((((4/3)^dimension) + ((1/n^2)*s1))))
 	}
 	
 	return(R)
