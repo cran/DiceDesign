@@ -1,11 +1,11 @@
-f8a06f2d8e639dda7c6eeb8d42c17215 *DESCRIPTION
+de539d11cba6639fcf4ab3ea247f736a *DESCRIPTION
 e07c2c7b578cf307456633d8b0925e08 *NAMESPACE
 24c1c12004fbf1ed0684ca18475180f4 *R/coverage.R
 3a8affd0ea109e5e59671c0a5369862b *R/discrepancyCriteria.R
 215fd66388852aae0768edbdc8548b4e *R/dmaxDesign.R
 14fbe5807f9b779ac3216e10c161b738 *R/factDesign.R
 2c1213de3297d588bfcbc4da65313291 *R/fcts_optimalLHSDesigns.R
-177eb56a35383c8278f868959e1ec3c7 *R/lhsDesign.R
+8530276201e0e96015d297c57eabbf96 *R/lhsDesign.R
 60daf07e9a4bac50b9e0d556ac81ad49 *R/meshRatio.R
 3390ee7ad5ce7650974eaa90061dcf04 *R/mindist.R
 0e458e0da2de92825b771867d9bc358a *R/mstCriteria.R

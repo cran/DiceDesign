@@ -21,7 +21,7 @@ lhsDesign <- function(n, dimension, randomized=TRUE, seed=NULL){
   x = matrix(0,nrow=n,ncol=dimension)  # initializing matrix x
   
   for (i in 1:dimension) {
-    idx = sample(1:n)        # vector of permutations of {1,2,…nN}
+    idx = sample(1:n)        # vector of permutations of [1 to n]
     P = (idx-ran[,i]) / n    # vecteur of probabilities
     x[,i] <- P  }
   
