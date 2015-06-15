@@ -1,4 +1,4 @@
-de539d11cba6639fcf4ab3ea247f736a *DESCRIPTION
+34b02b1000df5808f84d1983a7110f3c *DESCRIPTION
 e07c2c7b578cf307456633d8b0925e08 *NAMESPACE
 24c1c12004fbf1ed0684ca18475180f4 *R/coverage.R
 3a8affd0ea109e5e59671c0a5369862b *R/discrepancyCriteria.R
@@ -12,7 +12,7 @@ e07c2c7b578cf307456633d8b0925e08 *NAMESPACE
 4ae3357175bf527da7f553c8605d2ab3 *R/optimalLHSDesigns.R
 0a686106affecada3ab5fd3992fa1017 *R/phiP.R
 968383d2f0ee98e177ce47d4a6763cd3 *R/rss2d.R
-9e576f0190bd0d95837c65ce2f3756e8 *R/rss3d.R
+22bc2d1db8bd909905879d5c2492c081 *R/rss3d.R
 666f57d237a37265424a476118236ae0 *R/runif.faure.R
 bac1e367b10678d042be2e990d193dd9 *R/straussDesign.R
 cb3894c47b3b769157e2cb03031a214b *R/sysdata.rda
@@ -21,11 +21,11 @@ cb3894c47b3b769157e2cb03031a214b *R/sysdata.rda
 e2fbf308b6ba5d7d372660c06f783d1c *R/wspDesign.R
 23863b0e30a622f8e9f43e92e8b26878 *data/OA131.txt.gz
 c0165816111e72c1b51f7e16574193c3 *data/OA131_scrambled.txt.gz
-7cab0a79f95fe84fd39d0cc54ebe8ce4 *inst/po/fr_FR.UTF-8/LC_MESSAGES/DiceDesign.mo
-776e7073a2980a5102c05ca7ddd0825f *man/DiceDesign-package.Rd
+22bcaf1773caa998fbdda4d9b8d3101d *inst/CITATION
+7fa669129028890bcc1f3f293a4bb709 *man/DiceDesign-package.Rd
 754f59c37bcf123bb2798f0c2f10afe0 *man/OA131.Rd
 b404cad1f9c9e94dde4a41618e1af37d *man/OA131_scrambled.Rd
-60b0e815806fac15698eb6e3cc8ad905 *man/coverage.Rd
+b5246d2588241951fb7c2347aeb63b2b *man/coverage.Rd
 4f16ebcdcbfa6111710fcecf04959b00 *man/discrepESE_LHS.Rd
 787f7315bd00f22229065c6e1dd472f5 *man/discrepSA_LHS.Rd
 a6039ee798265cdf3eb4ee9dca1241b0 *man/discrepancyCriteria.Rd
@@ -34,8 +34,8 @@ b7f84fa8cee584b3c40a7cc58973e6ad *man/dmaxDesign.Rd
 3fe611ba4a13b77df4b024621516cd8a *man/lhsDesign.Rd
 8cc52ad3963043f0ca550a091e70e09f *man/maximinESE_LHS.Rd
 d168d5fdc7faa9f927cdaaaaacb26845 *man/maximinSA_LHS.Rd
-e8e715f2be89ef8500460cbfca7ddac6 *man/meshRatio.Rd
-7f023d5fae4843523cca9ac956b2dc4a *man/mindist.Rd
+e7920449ca7f57cda76901c684144009 *man/meshRatio.Rd
+95f875ecf23ce1b58397d2c8865e9bc2 *man/mindist.Rd
 a749e8aaaa236baa4abd978b9acf8aca *man/mstCriteria.Rd
 b4232fc514256ddff4a50c68492d4ab4 *man/phiP.Rd
 56a4cd31a619b317a86f4ae988155162 *man/rss2d.Rd
@@ -45,7 +45,5 @@ d369c892b7e18d772c8a2196456f7797 *man/straussDesign.Rd
 55778e622fd0f4b29dc51366299c78ff *man/unif.test.quantile.Rd
 30d0f37cb95bbfb7cf1d09407b613f2d *man/unif.test.statistic.Rd
 9977390ee15ada9e63a81a64a42f6fab *man/wspDesign.Rd
-3a62ca5c9df8fe1c4dd50eda2abaa5c1 *po/DiceDesign.pot
-b9dc210df27d90a2c056dc88ad8edc37 *po/fr_FR.UTF-8.po
-fa77b8fe9f51b525c0e2196131ab137f *src/C_StraussDesign.c
+232b7d364ead35439d46fa0acf340a6c *src/C_StraussDesign.c
 48ea05205dcdc37b139309bdde2bbfb0 *src/C_rss.c

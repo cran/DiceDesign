@@ -54,9 +54,11 @@ void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, cons
   int iunif,dim,point;
   int inmc, k;
 
+GetRNGstate();
+
   /* initialization of the random generator */
   // unsigned int graine=time(NULL);
-  srand(graine); 
+ // srand(graine); 
 
   /*   Allocation of memory of a d-dimensional vector u corresponding to the proposed new point  */
   double *u = (double*) malloc((*d) * sizeof(double));
@@ -70,7 +72,7 @@ void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, cons
     for (inmc=0; inmc< *nmc; inmc++){
       for (k=0; k< *n; k++){
         /* selection of a point (column number betwenn 0 and (n-1)) */
-		iunif = (int) (((double) *n) * ( (double)rand() / ((double)(RAND_MAX)+(double)(1))));
+		iunif = (int) (((double) *n) * ( (double)unif_rand() ));
 		/* computation of nx and nu for the one-dimensional case (row by row)
 			nx = number of points closed to the selected point x 
 			nu = number of points closed to the possible new point u
@@ -79,7 +81,7 @@ void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, cons
         for (dim = 0 ; dim<*d; dim++){
 			nu=0;	nx=0;
 			/* Propose a new point u (d lines and 1 column) */
-			u[dim] = (double)rand() / ((double)(RAND_MAX)+(double)(1));
+			u[dim] = (double)unif_rand() ;
 			
 		if (*constraints1D == 1){	
             for (point=0; point<*n; point++){
@@ -119,7 +121,7 @@ void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, cons
         }
         pND = MIN(1,(float)(exp(-betaND*pu))/exp(-betaND*px));
         p = pND * p1D;
-        if	(rand()/(float)RAND_MAX < p){
+        if	(unif_rand() < p){
           for (dim=0; dim<*d; dim++){
             v[dim][iunif] = u[dim];
           }
@@ -132,14 +134,14 @@ void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, cons
     for (inmc=0; inmc<*nmc; inmc++){
       for (k=0; k<*n; k++){
         /* selection of a point (column number betwenn 0 and n) */
-		iunif = (int) (((double) *n) * ( (double)rand() / ((double)(RAND_MAX)+(double)(1))));
+		iunif = (int) (((double) *n) * ( (double)unif_rand() ));
 		/* computation of nx and nu for the one-dimensional case (row by row) */
         p1D = 1;	
         /* study dimension by dimension (row by row) */
         for (dim = 0 ; dim<*d; dim++){
 			nu=0;	nx=0;
 			/* Propose a new point u (d lines and 1 column) */
-			u[dim] = (double)rand() / ((double)(RAND_MAX)+(double)(1));
+			u[dim] = (double)unif_rand() ;
 			if (*constraints1D == 1){
 				for (point=0; point<*n; point++){
 					if (iunif != point){
@@ -173,7 +175,7 @@ void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, cons
 			}
         }
     	p = pow(gammaND,MAX(0,nu-nx)) * p1D;      
-        if	(rand()/(float)RAND_MAX < p){
+        if	(unif_rand() < p){
 			for (dim=0; dim<*d; dim++){
 				v[dim][iunif] = u[dim];
 			}
@@ -182,6 +184,9 @@ void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, cons
     }
   }
   free(u);
+PutRNGstate();
+
+
 }
 
 /* #####################################################################################

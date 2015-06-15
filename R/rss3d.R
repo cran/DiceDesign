@@ -128,48 +128,53 @@ if (is.null(gof.test.stat)) {
 
 if (graphics > 0) {
 	
-	library(rgl)
-	open3d()
+  if (requireNamespace("rgl", quietly = TRUE)) {
+    rgl::open3d()
+    design <- design[, triplet.worst]
+    x <- design[, 1]
+    y <- design[, 2]
+    z <- design[, 3]
+    
+    index.max <- which.max(anglewise.stat.max)
+    ax.max <- ax[index.max]
+    ay.max <- ay[index.max]
+    az.max <- az[index.max] 
+    
+    phi.max <- theta.max <- NA
+    for (j in 1:n.phi) {
+      for (k in 1:n.theta) {
+        if (abs(anglewise.stat.max[k,j]-global.stat.max)<1e-10) {
+          phi.max <- phi[j]
+          theta.max <- theta[k]
+        } 			
+      }
+    }
+    
+    dir.max <- c(ax.max, ay.max, az.max)
+    projections <- as.matrix(design) %*% dir.max
+    
+    rgl::plot3d(x, y, z, size=5, col="blue", xlim=c(-1,1), ylim=c(-1,1), zlim=c(-1,1), xlab="", ylab="", zlab="")
+    
+    a.max <- max(abs(dir.max))
+    
+    rgl::plot3d(c(-1,1)*ax.max/a.max, c(-1,1)*ay.max/a.max, c(-1,1)*az.max/a.max, col="red", type="l", size=2, add=TRUE)
+    
+    
+    for (i in 1:n) {
+      h <- projections[i]*dir.max - design[i,]
+      if (max(abs(h)) > 1e-8) {
+        lambda <- min(min((sign(h) - design[i,])/h), 1)
+        rgl::plot3d(c(design[i,1], design[i,1] + lambda*h[1]), c(design[i,2], design[i,2] + lambda*h[2]), c(design[i,3], design[i,3] + lambda*h[3]), type="l", col="red", add=TRUE)
+      }
+      if (max(abs(projections[i]*dir.max))<=1) rgl::plot3d(projections[i]*dir.max[1], projections[i]*dir.max[2], projections[i]*dir.max[3], pch=20, col="red", size=5, add=TRUE)
+    }
+    par(mfrow=c(1,1))
+    
+  } else {
+   print("Error : the package rgl is not installed")
+  }
 	
-	design <- design[, triplet.worst]
-	x <- design[, 1]
-	y <- design[, 2]
-	z <- design[, 3]
 	
-	index.max <- which.max(anglewise.stat.max)
-	ax.max <- ax[index.max]
- 	ay.max <- ay[index.max]
- 	az.max <- az[index.max] 
-	
- 	phi.max <- theta.max <- NA
- 	for (j in 1:n.phi) {
- 		for (k in 1:n.theta) {
- 			if (abs(anglewise.stat.max[k,j]-global.stat.max)<1e-10) {
- 				phi.max <- phi[j]
- 				theta.max <- theta[k]
- 			} 			
- 		}
- 	}
-	
- 	dir.max <- c(ax.max, ay.max, az.max)
-	projections <- as.matrix(design) %*% dir.max
-		
-	plot3d(x, y, z, size=5, col="blue", xlim=c(-1,1), ylim=c(-1,1), zlim=c(-1,1), xlab="", ylab="", zlab="")
-	
-	a.max <- max(abs(dir.max))
-	
-	plot3d(c(-1,1)*ax.max/a.max, c(-1,1)*ay.max/a.max, c(-1,1)*az.max/a.max, col="red", type="l", size=2, add=TRUE)
-	
-	
-	for (i in 1:n) {
-		h <- projections[i]*dir.max - design[i,]
-		if (max(abs(h)) > 1e-8) {
-			lambda <- min(min((sign(h) - design[i,])/h), 1)
-			plot3d(c(design[i,1], design[i,1] + lambda*h[1]), c(design[i,2], design[i,2] + lambda*h[2]), c(design[i,3], design[i,3] + lambda*h[3]), type="l", col="red", add=TRUE)
-		}
-		if (max(abs(projections[i]*dir.max))<=1) plot3d(projections[i]*dir.max[1], projections[i]*dir.max[2], projections[i]*dir.max[3], pch=20, col="red", size=5, add=TRUE)
-	}
-	par(mfrow=c(1,1))
 } # end of conditional block: "if graphics > 0"
 
 return(list(stat=anglewise.stat.max, angle=data.frame(theta=theta, phi=phi), global.stat=global.stat.array, print.out=print.out, gof.test.stat=gof.test.stat, worst.case=triplet.worst, worst.dir=dir.max))

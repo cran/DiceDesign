@@ -20,7 +20,7 @@ A higher value corresponds to a more regular scaterring of design points.
 
 \references{Gunzburer M., Burkdart J. (2004) \emph{Uniformity measures for point
 samples in hypercubes}
-\url{http://people.sc.fsu.edu/~burkardt/pdf/ptmeas.pdf}.
+\url{https://people.sc.fsu.edu/~jburkardt/}.
 
 Jonshon M.E., Moore L.M. and Ylvisaker D. (1990) \emph{Minmax and maximin distance
 designs}, J. of Statis. Planning and Inference, 26, 131-148.

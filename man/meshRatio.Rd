@@ -22,7 +22,7 @@ Note that for a regular mesh, \code{meshRatio}=1.
 
 \references{Gunzburer M. and Burkdart J. (2004) \emph{Uniformity measures for
 point samples in hypercubes}
-\url{http://people.sc.fsu.edu/~burkardt/pdf/ptmeas.pdf}.}
+\url{https://people.sc.fsu.edu/~jburkardt/}.}
 
 \author{J. Franco}
 

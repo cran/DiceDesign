@@ -7,8 +7,8 @@
 \details{\tabular{ll}{
 	Package: \tab DiceDesign\cr
 	Type: \tab Package\cr
-	Version: \tab 1.2\cr
-	Date: \tab 2013-26-12\cr
+	Version: \tab 1.7\cr
+	Date: \tab 2015-06-15\cr
 	License: \tab GPL-3\cr
 	}
 This package provides tools to create some specific Space-Filling Design (SFD) and to test their quality:
@@ -40,6 +40,8 @@ Note also that the \pkg{lhs} package provides other types of algorithms to compu
 Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of space filling designs: optimization of Latin Hypercube Samples and subprojection properties,
 \emph{Journal of Simulation,} 7:276-289, 2013.
 \url{http://www.gdr-mascotnum.fr/doku.php?id=iooss1}
+
+Dupuy D., Helbert C., Franco J. (2015), DiceDesign and DiceEval: Two R-Packages for Design and Analysis of Computer Experiments, \emph{Journal of Statistical Software}, \bold{65}(11), 1--38, \url{http://www.jstatsoft.org/v65/i11/}.
 
 Fang K.-T., Li R. and Sudjianto A. (2006) Design and Modeling for Computer Experiments, \emph{Chapman & Hall}.
 

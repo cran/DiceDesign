@@ -21,7 +21,7 @@ Note that for a regular mesh, \code{cov}=0. Then, a small value of \code{cov} me
 
 \references{Gunzburer M., Burkdart J. (2004) \emph{Uniformity measures for point
 samples in hypercubes}
-\url{http://people.sc.fsu.edu/~burkardt/pdf/ptmeas.pdf}.}
+\url{https://people.sc.fsu.edu/~jburkardt/}.}
 
 \author{J. Franco}
 
