@@ -18,23 +18,27 @@ where \eqn{\gamma_{i}}{g_i} denotes the minimal distance between the point
 
 Note that for a regular mesh, \code{meshRatio}=1.
 }
-\value{A real number equal to the value of the meshRatio criterion for the \code{design}.}
 
-\references{Gunzburer M. and Burkdart J. (2004) \emph{Uniformity measures for
-point samples in hypercubes}
-\url{https://people.sc.fsu.edu/~jburkardt/}.}
+\value{
+A real number equal to the value of the meshRatio criterion for the \code{design}.
+}
+
+\references{
+Gunzburer M. and Burkdart J. (2004), Uniformity measures for point samples in hypercubes, \url{https://people.sc.fsu.edu/~jburkardt/}.
+}
 
 \author{J. Franco}
 
-\seealso{ other distance criteria like \code{\link{meshRatio}}, \code{\link{phiP}} and \code{\link{mindist}}.
+\seealso{Other distance criteria like \code{\link{meshRatio}}, \code{\link{phiP}} and \code{\link{mindist}}.
 
-discrepancy measures provided by \code{\link{discrepancyCriteria}}.}
+Discrepancy measures provided by \code{\link{discrepancyCriteria}}.}
 
 \examples{
 dimension <- 2
 n <- 40
-X <- matrix(runif(n*dimension),n,dimension)
+X <- matrix(runif(n*dimension), n, dimension)
 meshRatio(X)
 }
 
-\keyword{ design }
+\keyword{design}
+

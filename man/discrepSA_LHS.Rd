@@ -3,8 +3,10 @@
 
 \title{Simulated annealing (SA) routine for Latin Hypercube Sample (LHS) optimization via L2-discrepancy criteria}
 \description{The objective is to produce low-discrepancy LHS. SA is an efficient algorithm to produce space-filling designs. It has been adapted here to main discrepancy criteria.}
-\usage{discrepSA_LHS(design,T0=10,c=0.95,it=2000,criterion="C2",
-profile="GEOM",Imax=100)}
+
+\usage{
+discrepSA_LHS(design, T0=10, c=0.95, it=2000, criterion="C2", profile="GEOM", Imax=100)
+}
 
 \arguments{
   \item{design}{a matrix (or a data.frame) corresponding to the design of experiments}
@@ -47,7 +49,7 @@ of computer experiments. Journal of Statistical Planning and Inference, 134:268-
 
 }
 
-\author{G.Damblin & B. Iooss}
+\author{G. Damblin & B. Iooss}
 
 \seealso{Latin Hypercube Sample(\code{\link{lhsDesign}}),discrepancy criteria(\code{\link{discrepancyCriteria}}), geometric criterion (\code{\link{mindist}}\code{\link{phiP}}), optimization (\code{\link{maximinSA_LHS}},\code{\link{maximinESE_LHS}} ,\code{\link{discrepESE_LHS}})}
 
@@ -55,13 +57,19 @@ of computer experiments. Journal of Statistical Planning and Inference, 134:268-
 \examples{
 dimension <- 2
 n <- 10
-X <- lhsDesign(n,dimension)$design
-Xopt <- discrepSA_LHS(X,T0=10,c=0.99,it=2000,criterion="C2")
+X <- lhsDesign(n, dimension)$design
+
+## Optimize the LHS with C2 criterion
+Xopt <- discrepSA_LHS(X, T0=10, c=0.99, it=2000, criterion="C2")
 plot(Xopt$design)
-plot(Xopt$critValues,type="l")
+plot(Xopt$critValues, type="l")
+
+## Optimize the LHS with C2 criterion and GEOM_MORRIS profile
 \dontrun{
-  Xopt <- discrepSA_LHS(X,T0=10,c=0.99,it=1000,criterion="C2",profile="GEOM_MORRIS")
+Xopt2 <- discrepSA_LHS(X, T0=10, c=0.99, it=1000, criterion="C2", profile="GEOM_MORRIS")
+plot(Xopt2$design)
 }
 }
 
-\keyword{ design }
+\keyword{design}
+

@@ -1,5 +1,4 @@
-factDesign <- function (dimension, levels) 
-{
+factDesign <- function (dimension, levels) {
     if (length(levels) == 1) {
         levels <- rep(levels, dimension)
     }
@@ -19,5 +18,6 @@ factDesign <- function (dimension, levels)
         x[, i] <- xi
     }
     n <- dim(x)[1]
-    return(list(design = x, n = n, dimension = dimension, levels = levels))
+return(list(design = x, n = n, dimension = dimension, levels = levels))
 }
+

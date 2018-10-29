@@ -3,7 +3,9 @@
 
 \title{Simulated annealing (SA) routine for Latin Hypercube Sample (LHS) optimization via phiP criteria}
 \description{The objective is to produce maximin LHS. SA is an efficient algorithm to produce space-filling designs.}
-\usage{maximinSA_LHS(design,T0=10,c=0.95,it=2000,p=50,profile="GEOM",Imax=100)}
+\usage{
+maximinSA_LHS(design, T0=10, c=0.95, it=2000, p=50, profile="GEOM", Imax=100)
+}
 
 \arguments{
   \item{design}{a matrix (or a data.frame) corresponding to the design of experiments}
@@ -46,22 +48,29 @@ of computer experiments. Journal of Statistical Planning and Inference, 134:268-
 Pronzato, L. and Muller, W. (2012). Design of computer experiments: space filling and beyond, \emph{Statistics and Computing,} 22:681-701.
 }
 
-\author{G.Damblin & B. Iooss}
+\author{G. Damblin & B. Iooss}
 
-\seealso{Latin Hypercube Sample(\code{\link{lhsDesign}}),discrepancy criteria(\code{\link{discrepancyCriteria}}), geometric criterion (\code{\link{mindist}}\code{\link{phiP}}), optimization (\code{\link{discrepSA_LHS}},\code{\link{maximinESE_LHS}} ,\code{\link{discrepESE_LHS}})}
+\seealso{
+Latin Hypercube Sample (\code{\link{lhsDesign}}), 
+discrepancy criteria (\code{\link{discrepancyCriteria}}), 
+geometric criterion (\code{\link{mindist}}, \code{\link{phiP}}), 
+optimization (\code{\link{discrepSA_LHS}}, \code{\link{maximinESE_LHS}}, \code{\link{discrepESE_LHS}})
+}
 
 
 \examples{
 dimension <- 2
 n <- 10
-X <- lhsDesign(n,dimension)$design
-Xopt <- maximinSA_LHS(X,T0=10,c=0.99,it=2000)
+X <- lhsDesign(n ,dimension)$design
+Xopt <- maximinSA_LHS(X, T0=10, c=0.99, it=2000)
 plot(Xopt$design)
-plot(Xopt$critValues,type="l")
-plot(Xopt$tempValues,type="l")
+plot(Xopt$critValues, type="l")
+plot(Xopt$tempValues, type="l")
+
 \dontrun{
-  Xopt <- maximinSA_LHS(X,T0=10,c=0.99,it=1000,profile="GEOM_MORRIS")
+  Xopt <- maximinSA_LHS(X, T0=10, c=0.99, it=1000, profile="GEOM_MORRIS")
 }
 }
 
-\keyword{ design }
+\keyword{design}
+

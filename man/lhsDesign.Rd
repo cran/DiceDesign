@@ -23,9 +23,9 @@ Once the sample is generated, the uniform sample from a column can be transforme
 \value{A list with components:
   \item{n              	}{the number of points}
   \item{dimension      	}{the number of variables}
-  \item{design  		    }{the design of experiments}
+  \item{design  	    }{the design of experiments}
   \item{randomized      }{the type of LHD}
-  \item{seed			      }{the value of the seed}
+  \item{seed			}{the value of the seed}
 }
 
 \references{McKay M., Conover W. and Beckman R. (1979)
@@ -42,7 +42,12 @@ Stein M. (1987)
 \examples{
 n <- 20
 dimension <- 2
-out <- lhsDesign(n,dimension)
+out <- lhsDesign(n, dimension)
+out$design
+
+## Change the dimnames, adjust to range (-10, 10) and round to 2 digits
+xDRDN(out, letter = "T", dgts = 2, range = c(-10, 10))
 }
 
 \keyword{design}
+

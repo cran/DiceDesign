@@ -18,26 +18,27 @@ A higher value corresponds to a more regular scaterring of design points.
 
 \value{A real number equal to the value of the mindist criterion for the \code{design}.}
 
-\references{Gunzburer M., Burkdart J. (2004) \emph{Uniformity measures for point
-samples in hypercubes}
-\url{https://people.sc.fsu.edu/~jburkardt/}.
+\references{
 
-Jonshon M.E., Moore L.M. and Ylvisaker D. (1990) \emph{Minmax and maximin distance
-designs}, J. of Statis. Planning and Inference, 26, 131-148.
+Gunzburer M., Burkdart J. (2004), Uniformity measures for point samples in hypercubes, \url{https://people.sc.fsu.edu/~jburkardt/}.
 
-Chen V.C.P., Tsui K.L., Barton R.R. and Allen J.K. (2003) \emph{A review of design
-and modeling in computer experiments}, Handbook of Statistics, 22, 231-261.
+Jonshon M.E., Moore L.M. and Ylvisaker D. (1990), Minmax and maximin distance designs, \emph{J. of Statis. Planning and Inference}, 26, 131-148.
+
+Chen V.C.P., Tsui K.L., Barton R.R. and Allen J.K. (2003), A review of design and modeling in computer experiments, \emph{Handbook of Statistics}, 22, 231-261.
 }
 
 \author{J. Franco}
 
-\seealso{ other distance criteria like \code{\link{meshRatio}} and \code{\link{phiP}}, discrepancy measures provided by \code{\link{discrepancyCriteria}}.}
+\seealso{ 
+other distance criteria like \code{\link{meshRatio}} and \code{\link{phiP}}, 
+discrepancy measures provided by \code{\link{discrepancyCriteria}}.}
 
 \examples{
 dimension <- 2
 n <- 40
-X <- matrix(runif(n*dimension),n,dimension)
+X <- matrix(runif(n*dimension), n, dimension)
 mindist(X)
 }
 
-\keyword{ design }
+\keyword{design}
+

@@ -47,7 +47,7 @@ void Strauss(const int *n, const int *d,const int *nmc,const double *alpha, cons
 
   double R1D = (1.0/(float)*n)*0.75;	/* radius in 1D */
   double gamma = *gamma1D;				/* repulsion parameter in 1D for alpha=0 */
-  int graine = *seed;
+  /* int graine = *seed;	 */			    /* 2017-12-06 compilateur dit : graine utilise nul part */
 
   double RNDcarre=(*RND)*(*RND); 
   double p,pND,p1D,nu,nx,sum,sumu,betaND,gammaND,pu=0,px=0,nnx,nnu;
@@ -231,3 +231,6 @@ void C_StraussDesign(const double *init, const int *n,const int *d, const int *c
   }
   free(v);
 }
+
+
+

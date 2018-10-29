@@ -135,7 +135,7 @@ gamma_oneDD<-function(i1,i2,k,j,m)
 discrepancyL2_EP_ESE<-function(m,k,p)
 {
   G<-m
-  i<-trunc(runif(2,0,nrow(m)))+1   # On genère un autre LHS à partir de M, en le perturbant de façon minimale
+  i<-trunc(runif(2,0,nrow(m)))+1   # On genÃ¨re un autre LHS Ã  partir de M, en le perturbant de faÃ§on minimale
   x<-G[i[1],k]
   G[i[1],k]<-G[i[2],k]
   G[i[2],k]<-x 
@@ -233,7 +233,7 @@ ccWDD=function(i,j,m)
 #---------------------------------------------------------------------------|
 
 discrepancyW2_EP=function(m,i1,i2,k,p)        
-  #m=le LHS initial, i1 et i2=les deux lignes de la permutation, k la colonne,  DW=discrépance Wrap-around de m au carré
+  #m=le LHS initial, i1 et i2=les deux lignes de la permutation, k la colonne,  DW=discrÃ©pance Wrap-around de m au carrÃ©
 {
   
   n<-nrow(m)
@@ -364,7 +364,7 @@ ccDD<-function(i,j,m)
 #depends       : alphaDD, betaDD, gammaDD, gDD, hDD, ccDD                   |
 #---------------------------------------------------------------------------|
 
-discrepancyC2_EP=function(m,i1,i2,k,p)        #m=le LHS initial,     i1 et i2=les deux lignes de la permutation, k la colonne,  DW=discrépance Wrap-around de m au carré
+discrepancyC2_EP=function(m,i1,i2,k,p)        #m=le LHS initial,     i1 et i2=les deux lignes de la permutation, k la colonne,  DW=discrÃ©pance Wrap-around de m au carrÃ©
 {
   
   n<-nrow(m)
@@ -400,7 +400,7 @@ discrepancyC2_EP=function(m,i1,i2,k,p)        #m=le LHS initial,     i1 et i2=le
 #depends       : alphaDD, betaDD, gammaDD, gDD, hDD, ccDD                   |
 #---------------------------------------------------------------------------|
 
-discrepancyC2_EP_ESE=function(m,k,p)        #m=le LHS initial,     i1 et i2=les deux lignes de la permutation, k la colonne,  DW=discrépance Wrap-around de m au carré
+discrepancyC2_EP_ESE=function(m,k,p)        #m=le LHS initial,     i1 et i2=les deux lignes de la permutation, k la colonne,  DW=discrÃ©pance Wrap-around de m au carrÃ©
 {
   n<-nrow(m)
   G<-m
@@ -431,3 +431,4 @@ discrepancyC2_EP_ESE=function(m,k,p)        #m=le LHS initial,     i1 et i2=les 
   l=list(dC2,G)
   return(l)  
 }
+

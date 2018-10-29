@@ -6,8 +6,8 @@ For a 3-dimensional design, the 3D radial scanning statistic (RSS) scans angular
 
 \usage{
 rss3d(design, lower, upper, gof.test.type = "greenwood", 
-  gof.test.stat = NULL, transform = NULL, n.angle = 60, 
-  graphics = 1, trace = TRUE)
+      gof.test.stat = NULL, transform = NULL, n.angle = 60, 
+      graphics = 1, trace = TRUE)
 }
 
 \arguments{
@@ -40,9 +40,9 @@ rss3d(design, lower, upper, gof.test.type = "greenwood",
 
 
 \references{ 
-	Roustant O., Franco J., Carraro L., Jourdan A. (2010), A radial scanning statistic for selecting space-filling designs in computer experiments, MODA-9 proceedings, www.emse.fr/~roustant
-	
-	D Agostino R.B., Stephens M.A. (1986), Goodness-of-fit techniques, CRC Press, New York.
+Roustant O., Franco J., Carraro L., Jourdan A. (2010), A radial scanning statistic for selecting space-filling designs in computer experiments, MODA-9 proceedings, \url{http://www.emse.fr/~roustant/index.html}.
+
+D Agostino R.B., Stephens M.A. (1986), Goodness-of-fit techniques, CRC Press, New York.
 }
 
 \author{O. Roustant}
@@ -53,36 +53,36 @@ rss3d(design, lower, upper, gof.test.type = "greenwood",
 \keyword{design}
 
 \examples{
-	# An orthogonal array in 3D   
+## An orthogonal array in 3D   
 data(OA131)
 
-	# centering the design points of this 7-levels design
+## centering the design points of this 7-levels design
 OA <- (OA131 + 0.5)/7
 
-	# 2D projections onto coordinate axis 
+## 2D projections onto coordinate axis 
 pairs(OA, xlim=c(0,1), ylim=c(0,1))
-	# Now let us look at the 3D properties with the 3D RSS (requires the rgl package)
+## Now let us look at the 3D properties with the 3D RSS (requires the rgl package)
 rss <- rss3d(OA, lower=c(0,0,0), upper=c(1,1,1))
-	# The worst direction detected is nearly proportional to (2,-1,2)
-	# (type "?OA131" for explanations about this linear orthogonal array)
+## The worst direction detected is nearly proportional to (2,-1,2)
+## (type "?OA131" for explanations about this linear orthogonal array)
 print(rss$worst.dir)
 
-# Now, scramble this design
-# X <- (OA131 + matrix(runif(49*3, 49, 3)))/7
-# or load the design obtained this way
+## Now, scramble this design
+## X <- (OA131 + matrix(runif(49*3, 49, 3)))/7
+## or load the design obtained this way
 data(OA131_scrambled)
 OA2 <- OA131_scrambled
 
-# no feature is detected by the 2D RSS:
+## No feature is detected by the 2D RSS:
 rss <- rss2d(OA2, lower=c(0,0,0), upper=c(1,1,1))    
-# 4 clusters are detected by the 3D RSS:
+## 4 clusters are detected by the 3D RSS:
 rss <- rss3d(OA2, lower=c(0,0,0), upper=c(1,1,1))	
 
 	
-	# Defect detection of 8D Sobol sequences
-	# All triplets of dimensions are tried to detect the worst defect 
-	# (according to the specified goodness-of-fit statistic).
-	# requires randtoolbox library to generate the Sobol sequence
+## Defect detection of 8D Sobol sequences
+## All triplets of dimensions are tried to detect the worst defect 
+## (according to the specified goodness-of-fit statistic).
+## requires randtoolbox library to generate the Sobol sequence
 \dontrun{
 library(randtoolbox)
 d <- 8

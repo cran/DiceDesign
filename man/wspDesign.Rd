@@ -3,7 +3,7 @@
 
 \title{WSP algorithm}
 \description{The WSP (Wooton, Sergent, Phan-Tan-Luu) algorithm is an iterative algorithm based on suppression of some experiments from an initial design in each step. WSP leads to a space filling design.}
-\usage{wspDesign(design,dmin)}
+\usage{wspDesign(design, dmin)}
 
 \arguments{
   \item{design}{a matrix (or a data.frame) corresponding to the design of experiments.}
@@ -27,15 +27,17 @@ J. Santiago, M. Claeys-Bruno, M.Sergent (2012). Construction of space filling de
 
 }
 
-\author{G.Damblin & B.Iooss}
+\author{G. Damblin & B. Iooss}
 
 
 \examples{
 dimension <- 2
 n <- 100
-X <- matrix(runif(n*dimension),n,dimension)
-m=wspDesign(X,0.1)
+X <- matrix(runif(n*dimension), n, dimension)
+m <- wspDesign(X, 0.1)
 plot(m$design)
+xDRDN(m, letter = "T", dgts = 2, range = c(-10, 10))
 }
 
-\keyword{ design }
+\keyword{design}
+

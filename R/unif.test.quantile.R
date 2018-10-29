@@ -34,5 +34,5 @@ if (type=="greenwood") {
 }
 	
 return(q)
-	
 }
+

@@ -22,6 +22,6 @@ unif.test.statistic(x, type, transform=NULL)
 
 \author{O. Roustant}
 
-\seealso{ \code{\link{unif.test.quantile}}, \code{\link{rss2d}}}
+\seealso{\code{\link{unif.test.quantile}}, \code{\link{rss2d}}}
 
 \keyword{design}

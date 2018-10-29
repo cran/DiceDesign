@@ -65,5 +65,5 @@ else if (type=="qm") {    # Quesenberry-Miller
 
 
 return(stat)
-
 }
+

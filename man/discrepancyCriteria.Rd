@@ -60,9 +60,9 @@ Pleming J.B. and Manteufel R.D. (2005) \emph{Replicated Latin Hypercube Sampling
 \examples{
 dimension <- 2
 n <- 40
-X <- matrix(runif(n*dimension),n,dimension)
+X <- matrix(runif(n*dimension), n, dimension)
 discrepancyCriteria(X)
 }
 
-\keyword{ design }
+\keyword{design}
 

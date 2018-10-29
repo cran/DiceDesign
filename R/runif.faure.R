@@ -58,3 +58,4 @@ runif.faure <- function(n,dimension){
 	# outputs
 	return(out=list(design=F,n=n,dimension=dimension))
 }
+

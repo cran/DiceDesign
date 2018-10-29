@@ -123,6 +123,31 @@ if (is.null(gof.test.stat)) {
 	gof.test.stat <- unif.test.quantile(type=gof.test.type, n=n, alpha=0.05)
 }
 
+
+  # Compute the worst direction for the worst case
+
+design <- design[, triplet.worst]
+x <- design[, 1]
+y <- design[, 2]
+z <- design[, 3]
+
+index.max <- which.max(anglewise.stat.max)
+ax.max <- ax[index.max]
+ay.max <- ay[index.max]
+az.max <- az[index.max] 
+
+phi.max <- theta.max <- NA
+for (j in 1:n.phi) {
+  for (k in 1:n.theta) {
+    if (abs(anglewise.stat.max[k,j]-global.stat.max)<1e-10) {
+      phi.max <- phi[j]
+      theta.max <- theta[k]
+    } 			
+  }
+}
+
+dir.max <- c(ax.max, ay.max, az.max)
+
 	
 	# 3D graph with package rgl ##
 
@@ -130,27 +155,6 @@ if (graphics > 0) {
 	
   if (requireNamespace("rgl", quietly = TRUE)) {
     rgl::open3d()
-    design <- design[, triplet.worst]
-    x <- design[, 1]
-    y <- design[, 2]
-    z <- design[, 3]
-    
-    index.max <- which.max(anglewise.stat.max)
-    ax.max <- ax[index.max]
-    ay.max <- ay[index.max]
-    az.max <- az[index.max] 
-    
-    phi.max <- theta.max <- NA
-    for (j in 1:n.phi) {
-      for (k in 1:n.theta) {
-        if (abs(anglewise.stat.max[k,j]-global.stat.max)<1e-10) {
-          phi.max <- phi[j]
-          theta.max <- theta[k]
-        } 			
-      }
-    }
-    
-    dir.max <- c(ax.max, ay.max, az.max)
     projections <- as.matrix(design) %*% dir.max
     
     rgl::plot3d(x, y, z, size=5, col="blue", xlim=c(-1,1), ylim=c(-1,1), zlim=c(-1,1), xlab="", ylab="", zlab="")

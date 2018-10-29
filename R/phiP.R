@@ -20,3 +20,4 @@ phiP<-function(design,p=50)
   fi_p<-(sum(D))^(1/p)
   return(fi_p)  
 }
+

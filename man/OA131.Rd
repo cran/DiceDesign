@@ -16,17 +16,22 @@
   }
 }
 
-\source{ Roustant O., Franco J., Carraro L., Jourdan A. (2010), A radial scanning statistic for selecting space-filling designs in computer experiments, MODA-9 proceedings, www.emse.fr/~roustant} 
+\source{ 
+Roustant O., Franco J., Carraro L., Jourdan A. (2010), A radial scanning statistic for selecting space-filling designs in computer experiments, MODA-9 proceedings, \url{http://www.emse.fr/~roustant/index.html}.
+}
 
 \examples{
 data(OA131)
 
 # centering and reducing to [0,1]^3
 OA <- (OA131 + 0.5)/7
-
 pairs(OA, xlim=c(0,1), ylim=c(0,1))
-\dontrun{library(lattice)
+
+\dontrun{
+library(lattice)
 cloud(x3~x1+x2, data=OA, xlim=c(0,1), ylim=c(0,1), zlim=c(0,1), 
-    screen = list(z = 50, x = -70, y = 0))}
+      screen = list(z = 50, x = -70, y = 0))}
 }
+
 \keyword{datasets}
+

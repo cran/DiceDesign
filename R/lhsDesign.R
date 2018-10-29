@@ -28,3 +28,4 @@ lhsDesign <- function(n, dimension, randomized=TRUE, seed=NULL){
   # Outputs:
   return(list(n=n,dimension=dimension,design=x,randomized=randomized,seed=seed))
 }
+

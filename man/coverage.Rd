@@ -32,8 +32,9 @@ discrepancy measures provided by \code{\link{discrepancyCriteria}}.}
 \examples{
 dimension <- 2
 n <- 40
-X <- matrix(runif(n*dimension),n,dimension)
+X <- matrix(runif(n*dimension), n, dimension)
 coverage(X)
 }
 
 \keyword{design}
+

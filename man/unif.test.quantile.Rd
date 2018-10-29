@@ -25,6 +25,6 @@ unif.test.quantile(type, n, alpha)
 
 \author{O. Roustant}
 
-\seealso{ \code{\link{unif.test.statistic}}, \code{\link{rss2d}}, \code{\link{rss3d}}}
+\seealso{\code{\link{unif.test.statistic}}, \code{\link{rss2d}}, \code{\link{rss3d}}}
 
 \keyword{design}

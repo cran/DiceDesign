@@ -50,3 +50,4 @@ meshRatio <- function(design){
 	ratio <- sqrt(DistanceMax/DistanceMin)
    	return(ratio)
 }
+

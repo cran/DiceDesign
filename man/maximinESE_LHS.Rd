@@ -3,7 +3,9 @@
 
 \title{Enhanced Stochastic Evolutionnary (ESE) algorithm for Latin Hypercube Sample (LHS) optimization via phiP criteria}
 \description{The objective is to produce maximin LHS. ESE is a powerful genetic algorithm allowing to produce space-filling designs.}
-\usage{maximinESE_LHS(design,T0=0.005*phiP(design,p=50),inner_it=100,J=50,it=1,p=50)}
+\usage{
+maximinESE_LHS(design, T0=0.005*phiP(design,p=50), inner_it=100, J=50, it=1, p=50)
+}
 
 \arguments{
   \item{design}{a matrix (or a data.frame) corresponding to the design of experiments.}
@@ -45,19 +47,25 @@ of computer experiments. Journal of Statistical Planning and Inference, 134:268-
 Pronzato, L. and Muller, W. (2012). Design of computer experiments: space filling and beyond, \emph{Statistics and Computing,} 22:681-701.
 }
 
-\author{G.Damblin & B. Iooss}
+\author{G. Damblin & B. Iooss}
 
-\seealso{Latin Hypercube Sample(\code{\link{lhsDesign}}),discrepancy criteria(\code{\link{discrepancyCriteria}}), geometric criterion (\code{\link{mindist}}\code{\link{phiP}}), optimization (\code{\link{maximinSA_LHS}},\code{\link{discrepESE_LHS}} ,\code{\link{discrepSA_LHS}})}
+\seealso{
+Latin Hypercube Sample (\code{\link{lhsDesign}}), 
+discrepancy criteria (\code{\link{discrepancyCriteria}}), 
+geometric criterion (\code{\link{mindist}}, \code{\link{phiP}}), 
+optimization (\code{\link{maximinSA_LHS}}, \code{\link{discrepESE_LHS}}, \code{\link{discrepSA_LHS}})
+}
 
 
 \examples{
 dimension <- 2
 n <- 10
-X <- lhsDesign(n,dimension)$design
-Xopt <- maximinESE_LHS(X,T0=0.005*phiP(X),inner_it=100,J=50,it=2)
+X <- lhsDesign(n, dimension)$design
+Xopt <- maximinESE_LHS(X, T0=0.005*phiP(X), inner_it=100, J=50, it=2)
 plot(Xopt$design)
-plot(Xopt$critValues,type="l")
+plot(Xopt$critValues, type="l")
 
 }
 
-\keyword{ design }
+\keyword{design}
+

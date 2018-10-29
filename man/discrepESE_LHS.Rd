@@ -3,8 +3,11 @@
 
 \title{Enhanced Stochastic Evolutionnary (ESE) algorithm for Latin Hypercube Sample (LHS) optimization via L2-discrepancy criteria}
 \description{The objective is to produce low-discrepancy LHS. ESE is a powerful genetic algorithm to produce space-filling designs. It has been adapted here to main discrepancy criteria.}
-\usage{discrepESE_LHS(design,T0=0.005*discrepancyCriteria(design,type='C2')[[1]],
-inner_it=100,J=50,it=2,criterion="C2")}
+
+\usage{
+discrepESE_LHS(design, T0=0.005*discrepancyCriteria(design,type='C2')[[1]], 
+inner_it=100, J=50, it=2, criterion="C2")
+}
 
 \arguments{
   \item{design}{a matrix (or a data.frame) corresponding to the design of experiments.}
@@ -36,28 +39,33 @@ inner_it=100,J=50,it=2,criterion="C2")}
 Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of space filling designs: optimization of Latin Hypercube Samples and subprojection properties, \emph{Journal of Simulation,} 7:276-289, 2013.
 \url{http://www.gdr-mascotnum.fr/doku.php?id=iooss1}
 
-M. Morris and J. Mitchell (1995) Exploratory designs for computational experiments. Journal of 
-Statistical Planning and Inference, 43:381-402.
+M. Morris and J. Mitchell (1995) Exploratory designs for computational experiments. Journal of Statistical Planning and Inference, 43:381-402.
 
-R. Jin, W. Chen and A. Sudjianto (2005) An efficient algorithm for constructing optimal design
-of computer experiments. Journal of Statistical Planning and Inference, 134:268-287.
+R. Jin, W. Chen and A. Sudjianto (2005) An efficient algorithm for constructing optimal design of computer experiments. Journal of Statistical Planning and Inference, 134:268-287.
 
 }
 
 \author{G.Damblin & B. Iooss}
 
-\seealso{Latin Hypercube Sample(\code{\link{lhsDesign}}),discrepancy criteria(\code{\link{discrepancyCriteria}}), geometric criterion (\code{\link{mindist}}\code{\link{phiP}}), optimization (\code{\link{maximinSA_LHS}},\code{\link{maximinESE_LHS}} ,\code{\link{discrepSA_LHS}})}
+\seealso{
+Latin Hypercube Sample(\code{\link{lhsDesign}}), 
+discrepancy criteria(\code{\link{discrepancyCriteria}}), 
+geometric criterion (\code{\link{mindist}}\code{\link{phiP}}), 
+optimization (\code{\link{maximinSA_LHS}}, \code{\link{maximinESE_LHS}}, \code{\link{discrepSA_LHS}})
+}
 
 
 \examples{
 \dontrun{
 dimension <- 2
 n <- 10
-X <- lhsDesign(n,dimension)$design
-Xopt <- discrepESE_LHS(X,T0=0.005*discrepancyCriteria(X,type='C2')[[1]],inner_it=100,J=50,it=2)
+X <- lhsDesign(n, dimension)$design
+Xopt <- discrepESE_LHS(X, T0=0.005*discrepancyCriteria(X, type='C2')[[1]], 
+                       inner_it=100, J=50, it=2)
 plot(Xopt$design)
-plot(Xopt$critValues,type="l")
+plot(Xopt$critValues, type="l")
 }
 }
 
-\keyword{ design }
+\keyword{design}
+

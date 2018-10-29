@@ -88,5 +88,5 @@ dmaxDesign <- function(n,dimension,range,niter_max=1000,seed=NULL){
 
 	# Outputs:
  	return(list(n=n,dimension=dimension,range=range,niter_max=niter_max,design_init=p_init,design=p,det_init=Deter[1],det_end=dinit,seed=seed))
- }
+}
 

@@ -30,12 +30,17 @@ input arguments detailed before, plus the following components:
 
 \examples{
 ## First example
-g <- factDesign(2,7)
-plot(g$design,xlim=c(0,1),ylim=c(0,1))
+g1 <- factDesign(2, 7)
+plot(g1$design, xlim=c(0,1), ylim=c(0,1))
+
 ## Second example
-g <- factDesign(2,c(2,7))
-plot(g$design,xlim=c(0,1),ylim=c(0,1))
+g2 <- factDesign(2, c(2,7))
+plot(g2$design, xlim=c(0,1), ylim=c(0,1))
+
+## Change the dimnames, adjust to range (-10, 10) and round to 2 digits
+xDRDN(g1, letter = "T", dgts = 2, range = c(-10, 10))
+xDRDN(g2, letter = "T", dgts = 2, range = c(-10, 10))
 }
 
-\keyword{design }
+\keyword{design}
 

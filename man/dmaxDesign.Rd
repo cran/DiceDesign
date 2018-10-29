@@ -6,7 +6,7 @@
   [0,1]\eqn{^d}{^d}.
 }
 \usage{
-dmaxDesign(n, dimension, range, niter_max=1000,seed=NULL)
+dmaxDesign(n, dimension, range, niter_max=1000, seed=NULL)
 }
 
 \arguments{
@@ -63,7 +63,11 @@ n <- 20
 dimension <- 2
 range <-0.9
 niter_max <- 200
-out <- dmaxDesign(n,dimension,range,niter_max)
+out <- dmaxDesign(n, dimension, range, niter_max)
+
+## Change the dimnames, adjust to range (-10, 10) and round to 2 digits
+xDRDN(out, letter = "T", dgts = 2, range = c(-10, 10))
 }
 
 \keyword{design}
+

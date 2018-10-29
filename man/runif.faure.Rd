@@ -1,6 +1,6 @@
 \name{runif.faure}
 \alias{runif.faure}
-\title{Low discrepancy sequence : Faure }
+\title{Low discrepancy sequence : Faure}
 \description{
 	Generate a Faure sequence with \eqn{n}{n} experiments in [0,1]\eqn{^d}{^d}.}
 \usage{
@@ -26,15 +26,17 @@ see \pkg{randtoolbox} or \pkg{fOptions} packages for other low discrepancy seque
 input arguments detailed before, plus the following component:
   \item{design   }{the design of experiments}
 }
-\references{Faure H. (1982) \emph{Discrepance de suites associees
-a un systeme de numeration (en dimension s)}, Acta Arith. 41,
-337-351 }
+\references{
+Faure H. (1982), Discrepance de suites associees a un systeme de numeration (en dimension s), \emph{Acta Arith.}, 41, 337-351
+}
 
 \author{J. Franco}
 
 \examples{
 f <- runif.faure(20,2)
-plot(f$design,xlim=c(0,1),ylim=c(0,1))
+plot(f$design, xlim=c(0,1), ylim=c(0,1))
+xDRDN(f, letter="T", dgts=2, range=c(-10, 10))
 }
 
-\keyword{design }
+\keyword{design}
+

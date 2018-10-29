@@ -1,9 +1,13 @@
-useDynLib(DiceDesign) 
+useDynLib(DiceDesign, .registration = TRUE, .fixes = "C_") 
 
-export(coverage,discrepancyCriteria,
-	dmaxDesign,factDesign,meshRatio,mindist,
-	runif.faure,straussDesign, rss2d, rss3d, 
-  unif.test.quantile, unif.test.statistic,
-  wspDesign,phiP,mstCriteria,lhsDesign)
+export(coverage, discrepancyCriteria, 
+    dmaxDesign, factDesign, meshRatio, mindist, 
+    runif.faure, straussDesign, rss2d, rss3d, 
+    unif.test.quantile, unif.test.statistic, 
+    wspDesign, phiP, mstCriteria, lhsDesign, 
+    discrepSA_LHS, discrepESE_LHS, maximinSA_LHS, 
+    maximinESE_LHS, olhDesign, nolhDesign, nolhdrDesign, 
+    xDRDN)
 
-export(discrepSA_LHS,discrepESE_LHS,maximinSA_LHS,maximinESE_LHS)
+import(graphics, stats)
+

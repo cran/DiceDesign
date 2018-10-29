@@ -107,24 +107,27 @@ if (is.null(gof.test.stat)) {
 	gof.test.stat <- unif.test.quantile(type=gof.test.type, n=n, alpha=0.05)
 }
 
+# compute worst direction for the worst case
+design.names <- names(as.data.frame(design))
+
+design <- design[ , pair.worst] 
+design.names <- design.names[pair.worst]
+
+anglewise.stat.max <- max(anglewise.stat)
+index.max <- which.max(anglewise.stat)
+cos.theta.max <- subdiv.halfcircle[index.max, 1]
+sin.theta.max <- subdiv.halfcircle[index.max, 2]
+dir.max <- c(cos.theta.max, sin.theta.max)
+
 
 	# --------------------
 	# graphics if required
 	# --------------------
-	
+
+
+
 if (graphics>=0) {
 
-	design.names <- names(as.data.frame(design))
-	
-	design <- design[ , pair.worst] 
-	design.names <- design.names[pair.worst]
-	
-	anglewise.stat.max <- max(anglewise.stat)
-	index.max <- which.max(anglewise.stat)
- 	cos.theta.max <- subdiv.halfcircle[index.max, 1]
- 	sin.theta.max <- subdiv.halfcircle[index.max, 2]
- 	dir.max <- c(cos.theta.max, sin.theta.max)
-	
 	if (is.element(graphics, c(0,1))) {
 		par(mfrow=c(1,2+graphics))
 		plot(design, xlim=c(-1,1), ylim=c(-1,1), 

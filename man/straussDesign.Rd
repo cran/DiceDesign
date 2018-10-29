@@ -3,8 +3,9 @@
 
 \title{ Designs based on Strauss process}
 \description{Space-Filling Designs based on Strauss process}
-\usage{straussDesign(n,dimension,RND,alpha=0.5,repulsion=0.001,NMC=1000,
-    constraints1D=0,repulsion1D=0.0001,seed=NULL)
+\usage{
+straussDesign(n,dimension, RND, alpha=0.5, repulsion=0.001, NMC=1000,
+              constraints1D=0, repulsion1D=0.0001, seed=NULL)
 }
 
 \arguments{
@@ -53,32 +54,35 @@ The input parameters of \code{straussDesign} function can be interpreted as foll
 }
 \author{J. Franco}
 
-\references{J. Franco, X. Bay, B. Corre and D. Dupuy (2008) \emph{Planification
-	d experiences numeriques a partir du processus ponctuel de Strauss}
-	\url{http://hal.archives-ouvertes.fr/hal-00260701/fr/} (March 06,2008).}
+\references{
+J. Franco, X. Bay, B. Corre and D. Dupuy (2008) Planification d'experiences numeriques a partir du processus ponctuel de Strauss, \url{http://hal.archives-ouvertes.fr/hal-00260701/fr/}.
+}
 
 \examples{
-# Strauss-Gibbs designs in dimension 2 (n=20 points)
-S1 <- straussDesign(n=20,dimension=2,RND=0.2)
-plot(S1$design,xlim=c(0,1),ylim=c(0,1))
-theta <- seq(0,2*pi,by =2*pi/(100 - 1))
+## Strauss-Gibbs designs in dimension 2 (n=20 points)
+S1 <- straussDesign(n=20, dimension=2, RND=0.2)
+plot(S1$design, xlim=c(0,1), ylim=c(0,1))
+theta <- seq(0,2*pi, by=2*pi/(100 - 1))
 for(i in 1:S1$n){
    lines(S1$design[i,1]+S1$radius/2*cos(theta),
-	   S1$design[i,2]+S1$radius/2*sin(theta),col='red')
+	     S1$design[i,2]+S1$radius/2*sin(theta), col='red')
 }
-# 2D-Strauss design
-S2 <- straussDesign(n=20,dimension=2,RND=0.2,NMC=200,
-	constraints1D=0,alpha=0,repulsion=0.01)
 
+## 2D-Strauss design
+S2 <- straussDesign(n=20, dimension=2, RND=0.2, NMC=200,
+	         constraints1D=0, alpha=0, repulsion=0.01)
 plot(S2$design,xlim=c(0,1),ylim=c(0,1))
 
-# 2D-Strauss designs with constraints on the axis
-S3 <- straussDesign(n=20,dimension=2,RND=0.18,NMC=200,
-	constraints1D=1,alpha=0.5,repulsion=0.1,repulsion1D=0.01)
+## 2D-Strauss designs with constraints on the axis
+S3 <- straussDesign(n=20, dimension=2, RND=0.18, NMC=200, 
+	         constraints1D=1, alpha=0.5, repulsion=0.1, repulsion1D=0.01)
+plot(S3$design, xlim=c(0,1),ylim=c(0,1))
+rug(S3$design[,1], side=1)
+rug(S3$design[,2], side=2)
 
-plot(S3$design,xlim=c(0,1),ylim=c(0,1))
-rug(S3$design[,1],side=1)
-rug(S3$design[,2],side=2)
+## Change the dimnames, adjust to range (-10, 10) and round to 2 digits
+xDRDN(S3, letter="T", dgts=2, range=c(-10, 10))
 }
 
-\keyword{design }
+\keyword{design}
+

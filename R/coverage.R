@@ -33,3 +33,4 @@ coverage <- function(design){
 	cov <-(1/gammabar)*((1/n)*s)^(1/2)
 	return(cov)
 }
+
