@@ -31,7 +31,7 @@ Maintainer: Celine Helbert \email{Celine.Helbert@ec-lyon.fr}
 }
 
 \note{
-Part of this work was conducted within the frame of the DICE (Deep Inside Computer Experiments) Consortium between ARMINES, Renault, EDF, IRSN, ONERA and TOTAL S.A. (http://dice.emse.fr/).
+Part of this work was conducted on 2006-2009 within the frame of the DICE (Deep Inside Computer Experiments) Consortium between ARMINES, Renault, EDF, IRSN, ONERA and TOTAL S.A. (http://dice.emse.fr/).
 
 In this package, only Faure's sequence is implemented. Note that the \pkg{randtoolbox} package provides the following quasi random sequences: the Sobol sequence, the Halton (hence Van Der Corput) sequence and the Torus sequence (also known as Kronecker sequence). Note also that the \pkg{lhs} package provides other types of algorithms to compute optimized LHS.
 }

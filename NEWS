@@ -1,6 +1,12 @@
 === DiceDesign: Designs of Computer Experiments ===
 
 
+
+DiceDesign 1.8-1 - 2019-07-31
+===========================
+Modified function: wspDesign
+New functions: scaleDesign, unscaleDesign
+
 DiceDesign 1.7-5 - 2018-07-30
 =============================
 New datasets: NOLHdesigns, NOLHDRdesigns

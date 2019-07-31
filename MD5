@@ -1,6 +1,6 @@
-3e68c7d9a9bc0955eafd636f2c918619 *DESCRIPTION
-095c539bc92f1ae9a1ba2264a4834515 *NAMESPACE
-0ca1c7d62f55436a379d769895872728 *NEWS
+68b13962fc04030b41e01b533d2b6447 *DESCRIPTION
+e1651212bfaf3c67fdcbec1f706039e4 *NAMESPACE
+0852020de5d3764bda5c570a42afce59 *NEWS
 51f5f9fb6cf5d645478933e5c890cd86 *R/coverage.R
 2335d3216e006de7cd8ba275a17297cf *R/discrepancyCriteria.R
 ef2aecfecca109d2d29d4a2ff9b6de69 *R/dmaxDesign.R
@@ -18,11 +18,13 @@ b6249a7abfc7c3606b3fb24d5622dd5e *R/phiP.R
 3a7ed9be932591214a8c08914a2983b7 *R/rss2d.R
 20ff17121f4b7b63aacd2f77d0ae858e *R/rss3d.R
 2196c3b8eae395170c6bf241e7f6d14a *R/runif.faure.R
+1fdfbf0819028ac927d088d7fb747d6e *R/scaleDesign.R
 f92cfe1cd1da496e4f06636a3c978fe8 *R/straussDesign.R
 cb3894c47b3b769157e2cb03031a214b *R/sysdata.rda
 13820eede0dd9a755bc5226cd88db542 *R/unif.test.quantile.R
 b8df43f8e3fa110759bc4ce76582385a *R/unif.test.statistic.R
-9efac808e334ea9e7ba63a6beb77a1f8 *R/wspDesign.R
+f24ca101f87b620b79af1e9492cfa015 *R/unscaleDesign.R
+4d665388d3708da60da7117da868e373 *R/wspDesign.R
 b8eb0f8ae9bf090ac2b953e978fb4ec2 *R/xDRDN.R
 82e0b4ed73a897134a21bda11d40c063 *data/NOLHDRdesigns.rda
 c7b2e1d5e955e71e920243a8053faf6f *data/NOLHdesigns.rda
@@ -30,7 +32,7 @@ c7b2e1d5e955e71e920243a8053faf6f *data/NOLHdesigns.rda
 c0165816111e72c1b51f7e16574193c3 *data/OA131_scrambled.txt.gz
 55efb55f8d8626ea1b7021fd813c345d *data/datalist
 22bcaf1773caa998fbdda4d9b8d3101d *inst/CITATION
-dc18e37a9ae7c24457b7e920029f678a *man/DiceDesign-package.Rd
+6d6617d214ea29cf23a6f5679d73a6e7 *man/DiceDesign-package.Rd
 1b85458ae31339ec3525df2a3adb949a *man/NOLHDRdesigns.Rd
 f62b61bd50b71960e9296e7612d85e3e *man/NOLHdesigns.Rd
 5f70cef52929d3431f3ff7a2a2b85252 *man/OA131.Rd
@@ -54,10 +56,12 @@ aa7e22ef8b8b7fc1446331d8e48f4383 *man/nolhdrDesign.Rd
 c7e12851699b6569d60f07a2c7da7e8c *man/rss2d.Rd
 5910146c552bdc4877b129e79f99e59f *man/rss3d.Rd
 855794ad1e46528df308af281b27b603 *man/runif.faure.Rd
+ba8c86f509527f57bfe83abccd3cfad3 *man/scaleDesign.Rd
 10d4e202621f9da5504faf33ba4370da *man/straussDesign.Rd
 c3285360634910e935b4dc8fa991be7b *man/unif.test.quantile.Rd
 5562821a158f2702bbb26f5ec58ed71b *man/unif.test.statistic.Rd
-12eb73099f39ec8bf9186ec7547092be *man/wspDesign.Rd
+04f9ff793c5630bd5c9ce96152f34a51 *man/unscaleDesign.Rd
+6f324e44817ed0525f7a4480d93b2b2f *man/wspDesign.Rd
 8ada7af500148912650818aa4d39efa8 *man/xDRDN.Rd
 486f95a322fc40e947a5cd882a02f9f4 *src/C_StraussDesign.c
 48ea05205dcdc37b139309bdde2bbfb0 *src/C_rss.c

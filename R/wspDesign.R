@@ -7,17 +7,19 @@
 #args :  design     : matrix (n,d) containing n design points               |
 #                     d is the dimension                                    |
 #        dmin       : minimal bound for mindist final design                |    
+#        init       : define the initialization point of the algorithm      |
 #out :                a list containing the input arguments plus            |
 #                   the space filling design according to mindist criterion |
 #---------------------------------------------------------------------------|
 
 
-wspDesign <- function(design,dmin){           #  dmin :must be given
+wspDesign <- function(design, dmin, init = "center"){  #  dmin must be given
 
   m <- design
   n <-nrow(m)                     # Number of points in m.
   d <-ncol(m)                     # Dimension of m.
-  A<-rbind(m,rep(0.5,d))          # add center point
+  if (init == "center") A <- rbind(m, rep(0.5, d)) # add center point
+  else A <-  rbind(m, runif(d))
   D<-as.matrix(dist(A))
   diag(D)<-rep(Inf,n+1)            # Matrix of distances between all pairs of point (both design points and center)
 
@@ -46,9 +48,10 @@ wspDesign <- function(design,dmin){           #  dmin :must be given
               x<-c(x,base)}
               
    Mres <- m[x,]  # Final matrix    #final space-filling design
+   Mresidual <- m[-x, ] # Design of "residual" points (not in Mres)
   
-  return(list(InitialDesign=design,dmin=dmin,design=Mres))
-  
+   return(list(InitialDesign = design, dmin = dmin, design = Mres, ResidualDesign = Mresidual))
+   
    return(Mres) 
 }
 

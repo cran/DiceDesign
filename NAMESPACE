@@ -7,7 +7,7 @@ export(coverage, discrepancyCriteria,
     wspDesign, phiP, mstCriteria, lhsDesign, 
     discrepSA_LHS, discrepESE_LHS, maximinSA_LHS, 
     maximinESE_LHS, olhDesign, nolhDesign, nolhdrDesign, 
-    xDRDN)
+    xDRDN,scaleDesign,unscaleDesign)
 
 import(graphics, stats)
 
