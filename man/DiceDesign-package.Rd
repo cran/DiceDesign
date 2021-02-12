@@ -37,19 +37,23 @@ In this package, only Faure's sequence is implemented. Note that the \pkg{randto
 }
 
 \references{
-Cioppa T.M., Lucas T.W. (2007). Efficient nearly orthogonal and space-filling Latin hypercubes. \emph{Technometrics} 49, 45-55. \url{http://www.dtic.mil/dtic/tr/fulltext/u2/a520796.pdf}.
+Cioppa T.M., Lucas T.W. (2007). Efficient nearly orthogonal and space-filling Latin hypercubes. \emph{Technometrics} 49, 45-55.
 
-Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of space filling designs: optimization of Latin Hypercube Samples and subprojection properties, \emph{Journal of Simulation}, 7:276-289, 2013. \url{http://www.gdr-mascotnum.fr/doku.php?id=iooss1}.
+Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of space filling designs: optimization of Latin Hypercube Samples and subprojection properties, \emph{Journal of Simulation}, 7:276-289, 2013.
 
-De Rainville F.-M., Gagne C., Teytaud O., Laurendeau D. (2012). Evolutionary optimization of low-discrepancy sequences. \emph{ACM Transactions on Modeling and Computer Simulation (TOMACS)}, 22(2), 9. \url{https://dl.acm.org/citation.cfm?id=2133393}.
+De Rainville F.-M., Gagne C., Teytaud O., Laurendeau D. (2012). Evolutionary optimization of low-discrepancy sequences. \emph{ACM Transactions on Modeling and Computer Simulation (TOMACS)}, 22(2), 9.
 
-Dupuy D., Helbert C., Franco J. (2015), DiceDesign and DiceEval: Two R-Packages for Design and Analysis of Computer Experiments, \emph{Journal of Statistical Software}, \bold{65}(11), 1--38, \url{http://www.jstatsoft.org/v65/i11/}.
+Dupuy D., Helbert C., Franco J. (2015), DiceDesign and DiceEval: Two R-Packages for Design and Analysis of Computer Experiments, \emph{Journal of Statistical Software}, \bold{65}(11), 1--38.
 
 Fang K.-T., Li R. and Sudjianto A. (2006) Design and Modeling for Computer Experiments, \emph{Chapman & Hall}.
 
+Fang K-T., Liu M-Q., Qin H. and Zhou Y-D. (2018) Theory and application of uniform experimental designs. \emph{Springer}.
+
 Nguyen N.K. (2008) A new class of orthogonal Latinhypercubes, \emph{Statistics and Applications}, Volume 6, issues 1 and 2, pp.119-123.
 
-Roustant O., Franco J., Carraro L., Jourdan A. (2010), A radial scanning statistic for selecting space-filling designs in computer experiments, \emph{MODA-9 proceedings}, \url{http://www.emse.fr/~roustant/index.html}.
+Owen A.B. (2020), On dropping the first Sobol point, \url{https://arxiv.org/abs/2008.08051}.
+
+Roustant O., Franco J., Carraro L., Jourdan A. (2010), A radial scanning statistic for selecting space-filling designs in computer experiments, \emph{MODA-9 proceedings}.
 
 Santner T.J., Williams B.J. and Notz W.I. (2003) The Design and Analysis of Computer Experiments, \emph{Springer}, 121-161.
 }

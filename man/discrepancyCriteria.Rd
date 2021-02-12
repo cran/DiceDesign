@@ -18,6 +18,7 @@
 		\code{'M2'} \tab modified L2-discrepancy \cr
 		\code{'S2'} \tab symmetric L2-discrepancy \cr
 		\code{'W2'} \tab wrap-around L2-discrepancy \cr
+		\code{'Mix2'} \tab mixture L2-discrepancy \cr
 	}
   }
 }
@@ -31,14 +32,17 @@ where \eqn{a = (a_{1}; ... ; a_{d})'}{a = (a1; ... ; ad)'}, \eqn{b = (b_{1};...;
 [a1; b1) X ... X [ad;bd)}. The other L2-discrepancies are defined according to the same principle with different form from the subset \eqn{J}.
 Among all the possibilities, discrepancyCriteria implements only the L2 discrepancies because it can be expressed analytically even for high dimension.
 
-
 Centered L2-discrepancy is computed using the analytical expression done by Hickernell (1998). The user will refer to Pleming and Manteufel (2005) to have more details about the wrap around discrepancy.
 }
 
 \value{A list containing the L2-discrepancies of the \code{design}.}
 
-\references{Fang K.T, Li R. and Sudjianto A. (2006) Design and Modeling for
+\references{
+Fang K.T, Li R. and Sudjianto A. (2006) Design and Modeling for
 	Computer Experiments, \emph{Chapman & Hall}.
+
+Fang K-T., Liu M-Q., Qin H. and Zhou Y-D. (2018) Theory and application of uniform
+experimental designs. \emph{Springer}.
 
 Franco J. (2008) Planification d'experiences numerique en phase exploratoire pour
 la simulation des phenomenes complexes, \emph{PhD thesis, Ecole Nationale Superieure

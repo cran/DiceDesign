@@ -30,13 +30,13 @@ Main website: \url{http://qrand.gel.ulaval.ca/}
 
 The python source code: \url{https://github.com/fmder/pynolh/} 
 
-The python package: \url{https://pypi.python.org/pypi/pynolh/}.
+The python package: \url{https://pypi.org/project/pynolh/}.
 }
 
 \references{
-De Rainville F.-M., Gagne C., Teytaud O., Laurendeau D. (2012). Evolutionary optimization of low-discrepancy sequences. ACM Transactions on Modeling and Computer Simulation (TOMACS), 22(2), 9. \url{https://dl.acm.org/citation.cfm?id=2133393}
+De Rainville F.-M., Gagne C., Teytaud O., Laurendeau D. (2012). Evolutionary optimization of low-discrepancy sequences. ACM Transactions on Modeling and Computer Simulation (TOMACS), 22(2), 9. 
 
-Cioppa T.M., Lucas T.W. (2007). Efficient nearly orthogonal and space-filling Latin hypercubes. Technometrics 49, 45-55. \url{http://www.dtic.mil/dtic/tr/fulltext/u2/a520796.pdf}
+Cioppa T.M., Lucas T.W. (2007). Efficient nearly orthogonal and space-filling Latin hypercubes. Technometrics 49, 45-55.
 } 
 
 \seealso{

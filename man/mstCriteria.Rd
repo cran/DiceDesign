@@ -22,7 +22,7 @@
 \references{
 
 Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of space filling designs: optimization of Latin hypercube samples and subprojection properties,
-\emph{Journal of Simulation,} 7:276-289, 2013. \url{http://www.gdr-mascotnum.fr/doku.php?id=iooss1}
+\emph{Journal of Simulation,} 7:276-289, 2013. 
 
 Dussert, C., Rasigni, G., Rasigni, M., and Palmari, J. (1986). Minimal spanning tree: A new approach for studying order and disorder. \emph{Physical Review B}, 34(5):3528-3531.
 

@@ -1,4 +1,4 @@
-discrepancyCriteria <- function(design,type='all'){
+discrepancyCriteria <- function(design, type='all'){
 	#---------------------------------------
 	# source code by Jessica FRANCO (2006.10.05)
   # modified by Bertrand Iooss (2013.26.12)
@@ -31,9 +31,10 @@ discrepancyCriteria <- function(design,type='all'){
 	DisM2 <- FALSE
 	DisS2 <- FALSE
 	DisW2 <- FALSE
+	DisMix2 <- FALSE
 	
 	if (length(type)==1 && type=='all'){
-		type <- c('C2','L2','L2star','M2','S2','W2')	
+		type <- c('C2','L2','L2star','M2','S2','W2','Mix2')	
 	}
 	for(i in 1:length(type)){
 		type_ <- type[i]
@@ -43,12 +44,13 @@ discrepancyCriteria <- function(design,type='all'){
 	  	      L2star = {DisL2star <- TRUE},
         		M2 = {DisM2 <- TRUE},
         		S2 = {DisS2 <- TRUE},
-        		W2 = {DisW2 <- TRUE})
+        		W2 = {DisW2 <- TRUE},
+        		Mix2 = {DisMix2 <- TRUE})
 	}
 
 	# centered L2-discrepancy
 	#------------------------
-	if(DisC2==TRUE){
+	if(DisC2 == TRUE){
 		s1 <- 0; s2 <- 0
 		for (i in 1:n){
 			p  <- prod((1+0.5*abs(X[i,]-0.5)-0.5*((abs(X[i,]-0.5))^2)))
@@ -62,7 +64,7 @@ discrepancyCriteria <- function(design,type='all'){
 	}
 	# L2-discrepancy
 	#------------------------
-	if(DisL2==TRUE){
+	if(DisL2 == TRUE){
 	  s1 <- 0; s2 <- 0
 	  for (i in 1:n){
 	    p  <- prod(X[i,]*(1-X[i,]))
@@ -80,7 +82,7 @@ discrepancyCriteria <- function(design,type='all'){
 	
 	# L2star-discrepancy
 	#------------------------
-	if(DisL2star==TRUE){
+	if(DisL2star == TRUE){
 	  dL2<-0
 	  for (j in 1:n){
       for (i in 1:n){
@@ -146,6 +148,21 @@ discrepancyCriteria <- function(design,type='all'){
   			}
 		}
 		R <- c(R , DisW2 = sqrt((-((4/3)^dimension) + ((1/n^2)*s1))))
+	}
+	
+	# mixture L2-discrepancy
+	#------------------------
+	if(DisMix2 == TRUE){
+	  s1 <- 0; s2 <- 0
+	  for (i in 1:n){
+	    p  <- prod((5/3-0.25*abs(X[i,]-0.5)-0.25*((abs(X[i,]-0.5))^2)))
+	    s1 <- s1+p
+	    for (k in 1:n){
+	      q  <- prod((15/8-0.25*abs(X[i,]-0.5)-0.25*abs(X[k,]-0.5)-0.75*abs(X[i,]-X[k,])+0.5*((abs(X[i,]-X[k,]))^2)))
+	      s2 <- s2+q
+	    }
+	  }
+	  R <- c(R,DisMix2 = sqrt(((19/12)^dimension)-((2/n)*s1) + ((1/n^2)*s2)))
 	}
 	
 	return(R)

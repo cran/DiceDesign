@@ -8,7 +8,7 @@
 
 #####discrepancyTERM_L2_STAR#####
 #---------------------------------------------------------------------------|
-#args :  i,j : two points x_i and x_j from the design m                     |      
+#args :  i,j : two points x_i and x_j from the design m                     |
 #        m   : the design                                                   |
 #depends :  both "term_oneDD" and "term_twoDD"                              |
 #---------------------------------------------------------------------------|
@@ -55,7 +55,7 @@ term_oneDD=function(i,m)
 #####lhs_EP#####
 #---------------------------------------------------------------------------|
 #args :  m = the design                                                     |
-#out  :  l = list including design after EP, ligns and columns defining EP  |          
+#out  :  l = list including design after EP, ligns and columns defining EP  |
 #---------------------------------------------------------------------------|
 
 lhs_EP<-function(m) 
@@ -127,7 +127,7 @@ gamma_oneDD<-function(i1,i2,k,j,m)
 #        k     : the column of lhs elementary permutation                   |
 #        p     : the square of the L2_star_discrepancy of m                 |
 #out     l : list with dL2_2 (the square of the L2_star_discrepancy         |
-#             of the EP design and the matrix corresponding to the EP design|                    
+#             of the EP design and the matrix corresponding to the EP design|
 #depends :  term_oneDD, term_twoDD, alpha_oneDD, beta_oneDD,                |
 #           gamma_oneDD, discrepancyTERM_L2_STAR                            |
 #---------------------------------------------------------------------------|
@@ -135,7 +135,8 @@ gamma_oneDD<-function(i1,i2,k,j,m)
 discrepancyL2_EP_ESE<-function(m,k,p)
 {
   G<-m
-  i<-trunc(runif(2,0,nrow(m)))+1   # On genère un autre LHS à partir de M, en le perturbant de façon minimale
+  # On genere un autre LHS a partir de M, en le perturbant de facon minimale
+  i<-trunc(runif(2,0,nrow(m)))+1  
   x<-G[i[1],k]
   G[i[1],k]<-G[i[2],k]
   G[i[2],k]<-x 
@@ -170,7 +171,7 @@ discrepancyL2_EP_ESE<-function(m,k,p)
 #####discrepancyL2_EP#####
 #---------------------------------------------------------------------------|
 #args :  m     : the design before the EP                                   |
-#        i1,i2 : the two ligns of the lhs elementary permutation            |              
+#        i1,i2 : the two ligns of the lhs elementary permutation            |
 #        k     : the column of lhs elementary permutation                   |
 #        p     : the square of the L2_star_discrepancy of m                 |
 #out     dL2_2 : the square of the L2_star_discrepancy of the EP design     |
@@ -225,16 +226,17 @@ ccWDD=function(i,j,m)
 #####discrepancyW2_EP#####
 #---------------------------------------------------------------------------|
 #args :  m     : the design before the EP                                   |
-#        i1,i2 : the two ligns of the lhs elementary permutation            |              
+#        i1,i2 : the two ligns of the lhs elementary permutation            |
 #        k     : the column of lhs elementary permutation                   |
 #        p     : the square of the W2_star_discrepancy of m                 |
 #out     dW2_2 : the square of the W2_star_discrepancy of the new design    |
 #depends       : ccWDD, gammaWDD                                            |
 #---------------------------------------------------------------------------|
 
-discrepancyW2_EP=function(m,i1,i2,k,p)        
-  #m=le LHS initial, i1 et i2=les deux lignes de la permutation, k la colonne,  DW=discrépance Wrap-around de m au carré
+discrepancyW2_EP=function(m,i1,i2,k,p)
 {
+  # m=le LHS initial, i1 et i2=les deux lignes de la permutation, k la colonne,  
+  # DW=discrepance Wrap-around de m au carre
   
   n<-nrow(m)
   dW2_2<-rep(0,n-2)
@@ -357,15 +359,17 @@ ccDD<-function(i,j,m)
 #####discrepancyC2_EP#####
 #---------------------------------------------------------------------------|
 #args :  m     : the design before the EP                                   |
-#        i1,i2 : the two ligns of the lhs elementary permutation            |              
+#        i1,i2 : the two ligns of the lhs elementary permutation            |
 #        k     : the column of lhs elementary permutation                   |
 #        p     : the square of the C2_star_discrepancy of m                 |
 #out     dC2_2 : the square of the C2_star_discrepancy of the new design    |
 #depends       : alphaDD, betaDD, gammaDD, gDD, hDD, ccDD                   |
 #---------------------------------------------------------------------------|
 
-discrepancyC2_EP=function(m,i1,i2,k,p)        #m=le LHS initial,     i1 et i2=les deux lignes de la permutation, k la colonne,  DW=discrépance Wrap-around de m au carré
-{
+discrepancyC2_EP=function(m,i1,i2,k,p)
+{        
+# m=le LHS initial, i1 et i2=les deux lignes de la permutation, k la colonne,  
+# DW=discrepance Wrap-around de m au carre
   
   n<-nrow(m)
   m<-m-0.5
@@ -400,8 +404,10 @@ discrepancyC2_EP=function(m,i1,i2,k,p)        #m=le LHS initial,     i1 et i2=le
 #depends       : alphaDD, betaDD, gammaDD, gDD, hDD, ccDD                   |
 #---------------------------------------------------------------------------|
 
-discrepancyC2_EP_ESE=function(m,k,p)        #m=le LHS initial,     i1 et i2=les deux lignes de la permutation, k la colonne,  DW=discrépance Wrap-around de m au carré
+discrepancyC2_EP_ESE=function(m,k,p)
 {
+# m=le LHS initial,     i1 et i2=les deux lignes de la permutation, k la colonne,  
+# DW=discrepance Wrap-around de m au carre
   n<-nrow(m)
   G<-m
   i<-trunc(runif(2,0,n))+1 

@@ -6,7 +6,7 @@
 #---------------------------------------------------------------------------|
 #args :  design     : matrix (n,d) containing n design points               |
 #                     d is the dimension                                    |
-#        dmin       : minimal bound for mindist final design                |    
+#        dmin       : minimal bound for mindist final design                |
 #        init       : define the initialization point of the algorithm      |
 #out :                a list containing the input arguments plus            |
 #                   the space filling design according to mindist criterion |

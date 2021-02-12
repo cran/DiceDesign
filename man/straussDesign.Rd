@@ -55,7 +55,7 @@ The input parameters of \code{straussDesign} function can be interpreted as foll
 \author{J. Franco}
 
 \references{
-J. Franco, X. Bay, B. Corre and D. Dupuy (2008) Planification d'experiences numeriques a partir du processus ponctuel de Strauss, \url{http://hal.archives-ouvertes.fr/hal-00260701/fr/}.
+J. Franco, X. Bay, B. Corre and D. Dupuy (2008) Planification d'experiences numeriques a partir du processus ponctuel de Strauss, \url{https://hal.archives-ouvertes.fr/hal-00260701/fr/}.
 }
 
 \examples{

@@ -38,8 +38,7 @@ discrepSA_LHS(design, T0=10, c=0.95, it=2000, criterion="C2", profile="GEOM", Im
 
 \references{
 
-Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of space filling designs: optimization of Latin Hypercube Samples and subprojection properties, \emph{Journal of Simulation,} 7:276-289, 2013. 
-\url{http://www.gdr-mascotnum.fr/doku.php?id=iooss1}
+Damblin G., Couplet M., and Iooss B. (2013). Numerical studies of space filling designs: optimization of Latin Hypercube Samples and subprojection properties, \emph{Journal of Simulation,} 7:276-289, 2013.
 
 M. Morris and J. Mitchell (1995) Exploratory designs for computationnal experiments. Journal of 
 Statistical Planning and Inference, 43:381-402.

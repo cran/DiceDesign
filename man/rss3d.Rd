@@ -40,7 +40,7 @@ rss3d(design, lower, upper, gof.test.type = "greenwood",
 
 
 \references{ 
-Roustant O., Franco J., Carraro L., Jourdan A. (2010), A radial scanning statistic for selecting space-filling designs in computer experiments, MODA-9 proceedings, \url{http://www.emse.fr/~roustant/index.html}.
+Roustant O., Franco J., Carraro L., Jourdan A. (2010), A radial scanning statistic for selecting space-filling designs in computer experiments, MODA-9 proceedings.
 
 D Agostino R.B., Stephens M.A. (1986), Goodness-of-fit techniques, CRC Press, New York.
 }

@@ -24,7 +24,7 @@
 \author{T.M. Cioppa for the designs. P. Kiener for the R code.}
 
 \source{
-Sanchez, S. M. (2011). NOLHdesigns in Excel file. Available online at \url{https://my.nps.edu/web/seed/software-downloads/} 
+Sanchez, S. M. (2011). NOLHdesigns in Excel file. Available online at \url{https://nps.edu/web/seed/software-downloads/} 
 } 
 
 \references{

@@ -10,11 +10,11 @@ citEntry(entry = "Article",
   volume       = "65",
   number       = "11",
   pages        = "1--38",
-  url          = "http://www.jstatsoft.org/v65/i11/",
+  url          = "https://www.jstatsoft.org/v65/i11/",
 
   textVersion  =
   paste("Delphine Dupuy, Celine Helbert, Jessica Franco (2015).",
         "DiceDesign and DiceEval: Two R Packages for Design and Analysis of Computer Experiments.",
         "Journal of Statistical Software, 65(11), 1-38.",
-        "URL http://www.jstatsoft.org/v65/i11/.")
+        "URL https://www.jstatsoft.org/v65/i11/")
 )
