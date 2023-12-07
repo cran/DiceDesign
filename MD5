@@ -1,6 +1,6 @@
-8df75cc7035d289907a7a434065faed9 *DESCRIPTION
+99e8bcbb736fbaab21ab28e5ea88020d *DESCRIPTION
 465f6eb102e8d4a342e38f7e40c3df24 *NAMESPACE
-a36ec20798cbc84c93c9eabaaa86efeb *NEWS
+5ca17d938073729fa63df21d5dc20983 *NEWS.md
 51f5f9fb6cf5d645478933e5c890cd86 *R/coverage.R
 fdd075ed3f65b86ed9378f228943fa7c *R/discrepancyCriteria.R
 ef2aecfecca109d2d29d4a2ff9b6de69 *R/dmaxDesign.R
@@ -32,7 +32,7 @@ c7b2e1d5e955e71e920243a8053faf6f *data/NOLHdesigns.rda
 23863b0e30a622f8e9f43e92e8b26878 *data/OA131.txt.gz
 c0165816111e72c1b51f7e16574193c3 *data/OA131_scrambled.txt.gz
 55efb55f8d8626ea1b7021fd813c345d *data/datalist
-abaf2855d05bee2df97252267e4ab9b2 *inst/CITATION
+a7b7f943ffc322aed57ed42dceb13fdc *inst/CITATION
 0ab499a6cc4c135f3800d6ed95fdbdd2 *man/DiceDesign-package.Rd
 6ee2db332910ad99392eef3c1e9f243e *man/NOLHDRdesigns.Rd
 6ba811254b27ae981d503a14c80b104b *man/NOLHdesigns.Rd
@@ -59,7 +59,7 @@ dcaf6dc60f8523b128ef5c0efae46faf *man/rss2d.Rd
 5a5b96e42de0cf008ea47384f84e74e0 *man/rss3d.Rd
 855794ad1e46528df308af281b27b603 *man/runif.faure.Rd
 53cfcc5993ab47a5b11f3092b6840fec *man/scaleDesign.Rd
-fd6bd423111ffe958c81bb28ff812eb3 *man/straussDesign.Rd
+c84e2d7e751cf6d090993d0dc4b63e7e *man/straussDesign.Rd
 c3285360634910e935b4dc8fa991be7b *man/unif.test.quantile.Rd
 5562821a158f2702bbb26f5ec58ed71b *man/unif.test.statistic.Rd
 4e457320b5a46bb9a6f28d1d94f126d8 *man/unscaleDesign.Rd
